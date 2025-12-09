@@ -1,0 +1,2160 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Information | Kaizen Poultry Skills Academy</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* All your existing CSS remains the same */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary: #1a472a;
+            --secondary: #2e7d32;
+            --accent: #4caf50;
+            --light: #e8f5e9;
+            --dark: #1b5e20;
+            --text: #333;
+            --gray: #666;
+            --light-gray: #f5f5f5;
+            --white: #fff;
+        }
+
+        body {
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: var(--primary);
+            color: white;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+       /* Logo Responsiveness - First Approach */
+        .logo {
+            display: flex;
+            align-items: center;
+            transition: all 0.3s ease;
+            width: 100px;
+        }
+
+        .logo img {
+            transition: all 0.3s ease;
+        }
+
+        /* Default logo size for larger screens */
+        .logo img {
+            width: ;
+        }
+
+        /* Progressive logo sizing for different screen sizes */
+        @media (max-width: 1200px) {
+            .logo img {
+                width: 100px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .logo img {
+                width: 15%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .logo img {
+                width: 20%;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .logo img {
+                width: 25%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo img {
+                width: 30%;
+                min-width: 120px; /* Prevents logo from becoming too small */
+            }
+        }
+
+        @media (max-width: 360px) {
+            .logo img {
+                width: 35%;
+                min-width: 100px;
+            }
+        }
+
+        /* For very small screens */
+        @media (max-width: 320px) {
+            .logo img {
+                width: 40%;
+                min-width: 90px;
+            }
+        }
+
+
+        .logo i {
+            margin-right: 10px;
+            color: var(--accent);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-item {
+            position: relative;
+            margin-left: 20px;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 10px 15px;
+            display: flex;
+            align-items: center;
+            transition: all 0.3s ease;
+            border-radius: 4px;
+        }
+
+        .nav-link:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--accent);
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+
+        /* Hero Section - FIXED */
+        .course-hero {
+            background: 
+                linear-gradient(rgba(26, 71, 42, 0.85), rgba(46, 125, 50, 0.8)), 
+                url('about.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: white;
+            padding: 180px 0 100px;
+            text-align: center;
+            margin-top: 70px;
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        /* Fallback background in case image doesn't load */
+        .course-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .course-hero.fallback-bg::before {
+            opacity: 1;
+        }
+
+        .course-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .course-hero p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            padding: 14px 35px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn:hover {
+            background-color: var(--dark);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--accent);
+            color: var(--accent);
+            padding: 10px 25px;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--accent);
+            color: white;
+        }
+
+        /* Course Categories Section */
+        .course-categories {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: -10px;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background-color: var(--secondary);
+        }
+
+        .section-title p {
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .category-carousel {
+            position: relative;
+            margin-bottom: 60px;
+        }
+
+        .category-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .category-header h3 {
+            font-size: 1.8rem;
+            color: var(--primary);
+        }
+
+        .carousel-controls {
+            display: flex;
+            gap: 10px;
+        }
+
+        .carousel-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--light);
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .carousel-btn:hover {
+            background-color: var(--accent);
+            color: white;
+        }
+
+        .carousel-container {
+            overflow: hidden;
+            position: relative;
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s ease;
+            gap: 20px;
+        }
+
+        .category-card {
+            min-width: 300px;
+            background-color: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            border-top: 4px solid var(--accent);
+        }
+
+        .category-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .category-image {
+            height: 180px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .category-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .category-card:hover .category-image img {
+            transform: scale(1.05);
+        }
+
+        .facilitator-info {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            display: flex;
+            align-items: center;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 8px 12px;
+            border-radius: 20px;
+        }
+
+        .facilitator-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 10px;
+        }
+
+        .facilitator-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .facilitator-details h4 {
+            font-size: 0.9rem;
+            margin-bottom: 2px;
+            color: var(--primary);
+        }
+
+        .facilitator-details p {
+            font-size: 0.7rem;
+            color: var(--gray);
+        }
+
+        .category-content {
+            padding: 25px;
+        }
+
+        .category-content h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+
+        .category-content p {
+            color: var(--gray);
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+
+        .courses-count {
+            display: inline-block;
+            background-color: var(--light);
+            color: var(--secondary);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        /* Carousel Dots */
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            gap: 10px;
+        }
+
+        .carousel-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #ddd;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .carousel-dot.active {
+            background-color: var(--accent);
+            transform: scale(1.2);
+        }
+
+        /* Sub-categories Section */
+        .sub-categories {
+            padding: 40px 0;
+            background-color: var(--light);
+            display: none;
+        }
+
+        .sub-categories.active {
+            display: block;
+        }
+
+        .sub-category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .sub-category-card {
+            background-color: var(--white);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .sub-category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .sub-category-card h4 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+
+        .sub-category-card p {
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .course-details {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            font-size: 0.85rem;
+            color: var(--gray);
+        }
+
+        .course-price {
+            font-weight: 700;
+            color: var(--secondary);
+            font-size: 1.1rem;
+        }
+
+        /* Course Schedule Section */
+        .course-schedule {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+
+        .schedule-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .schedule-tabs {
+            display: flex;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #e0e0e0;
+            overflow-x: auto;
+            white-space: nowrap;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .schedule-tab {
+            padding: 12px 25px;
+            background: none;
+            border: none;
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--gray);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        .schedule-tab.active {
+            color: var(--primary);
+        }
+
+        .schedule-tab.active::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--accent);
+        }
+
+        .schedule-content {
+            display: none;
+        }
+
+        .schedule-content.active {
+            display: block;
+        }
+
+        .schedule-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .schedule-table th {
+            background-color: var(--light);
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+            color: var(--primary);
+            border-bottom: 2px solid var(--accent);
+        }
+
+        .schedule-table td {
+            padding: 15px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .schedule-table tr:hover {
+            background-color: #f9f9f9;
+        }
+
+        .course-name {
+            font-weight: 500;
+            color: var(--primary);
+        }
+
+        .course-date {
+            color: var(--secondary);
+            font-weight: 500;
+        }
+
+        .course-status {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .status-open {
+            background-color: #e8f5e9;
+            color: var(--secondary);
+        }
+
+        .status-upcoming {
+            background-color: #fff3e0;
+            color: #ff9800;
+        }
+
+        .status-full {
+            background-color: #ffebee;
+            color: #f44336;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .footer-content {
+            padding: 80px 0 40px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 40px;
+            height: 3px;
+            background-color: var(--accent);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+            padding-left: 5px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background-color: var(--accent);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding: 20px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+
+        /* Wave Animation */
+        .waves {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 15vh;
+            min-height: 100px;
+            max-height: 150px;
+        }
+
+        .wave {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" fill="%23ffffff"></path></svg>');
+            background-size: 1200px 100px;
+        }
+
+        .wave1 {
+            animation: wave 30s linear infinite;
+            opacity: 0.7;
+        }
+
+        .wave2 {
+            animation: wave 15s linear infinite reverse;
+            opacity: 0.5;
+        }
+
+        .wave3 {
+            animation: wave 10s linear infinite;
+            opacity: 0.3;
+        }
+
+        @keyframes wave {
+            0% {
+                background-position-x: 0;
+            }
+            100% {
+                background-position-x: 1200px;
+            }
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 70px;
+                flex-direction: column;
+                background-color: var(--primary);
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+                padding: 20px 0;
+                z-index: 999;
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .nav-item {
+                margin: 15px 0;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .course-hero {
+                background-attachment: scroll;
+                padding: 150px 0 80px;
+                min-height: 50vh;
+            }
+
+            .course-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .course-hero p {
+                font-size: 1.1rem;
+            }
+
+            .category-card {
+                min-width: 280px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .course-hero {
+                padding: 130px 0 60px;
+                min-height: 40vh;
+            }
+
+            .course-hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .course-hero p {
+                font-size: 1rem;
+            }
+
+            .btn {
+                padding: 12px 30px;
+                font-size: 1rem;
+            }
+
+            .course-categories {
+                padding: 60px 0;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+
+            .category-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+
+            .course-schedule {
+                padding: 60px 0;
+            }
+
+            .schedule-tabs {
+                flex-wrap: wrap;
+            }
+
+            /* Responsive table for mobile */
+            .schedule-table {
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+            
+            .schedule-table th, 
+            .schedule-table td {
+                min-width: 150px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .course-hero {
+                height: 60vh;
+                min-height: 400px;
+            }
+
+            .course-hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .course-hero p {
+                font-size: 0.95rem;
+            }
+
+            .category-card {
+                min-width: 260px;
+            }
+
+            .sub-category-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Landscape orientation for mobile */
+        @media (max-height: 500px) and (orientation: landscape) {
+            .hamburger {
+                display: none;
+            }
+            
+            .nav-menu {
+                position: static;
+                flex-direction: row;
+                padding: 0;
+            }
+            
+            .course-hero {
+                padding: 120px 0 60px;
+                min-height: 50vh;
+            }
+        }
+
+        /* Carousel responsive adjustments */
+        @media (max-width: 768px) {
+            .carousel-track {
+                gap: 15px;
+            }
+            
+            .category-card {
+                min-width: 85vw;
+            }
+        }
+
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .category-card {
+                min-width: 45vw;
+            }
+        }
+
+        @media (min-width: 1025px) {
+            .category-card {
+                min-width: 30vw;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                 <img src="kaizen-logo.png" width="10%" height="auto" class="logo" alt="Nakhat Spices Logo">                  
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" target="_blank" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="about.html" class="nav-link">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="training.html" class="nav-link">Training</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="courseinformation.html" class="nav-link">Course Info</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="services.html" class="nav-link">Services</a>
+                    </li>
+                     <li class="nav-item">
+                        <a href="frequentlyasked.html" class="nav-link">FAQ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="partners.html" class="nav-link">Partners</a>
+                    </li>
+                </ul>
+                
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section with Fixed Background Image -->
+    <section class="course-hero" id="course-hero">
+        <div class="container">
+            <h1>Comprehensive Agricultural Training Programs</h1>
+            <p>Explore our industry-leading courses designed to advance your agricultural career with expert-led instruction and hands-on learning experiences.</p>
+            <a href="#categories" class="btn">Browse All Courses</a>
+        </div>
+    </section>
+
+    <!-- Course Categories Section -->
+    <section class="course-categories" id="categories">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Training Categories</h2>
+                <p>Choose from our five specialized training categories designed to meet the needs of modern agricultural professionals</p>
+            </div>
+            
+            <!-- Category 1: Poultry & Livestock Training -->
+            <div class="category-carousel">
+                <div class="category-header">
+                    <h3>Poultry & Livestock Training</h3>
+                    <div class="carousel-controls">
+                        <button class="carousel-btn prev-btn" data-category="poultry">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button class="carousel-btn next-btn" data-category="poultry">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="carousel-container">
+                    <div class="carousel-track" id="poultry-track">
+                        <div class="category-card">
+                            <div class="category-image">
+                                <img src="courseinfo-poultry-farming.jpg" alt="Poultry Farming">
+                                <div class="facilitator-info">
+                                    <div class="facilitator-avatar">
+                                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Dr. Ahmed Bello">
+                                    </div>
+                                    <div class="facilitator-details">
+                                        <h4>Dr. Ahmed Bello</h4>
+                                        <p>Poultry Specialist</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="category-content">
+                                <span class="courses-count">8 Courses</span>
+                                <h3>Poultry Farming</h3>
+                                <p>Master modern poultry production techniques including broilers, layers, and hatchery basics.</p>
+                                <button class="btn-outline view-courses" data-category="poultry">View Courses</button>
+                            </div>
+                        </div>
+                        
+                        <div class="category-card">
+                            <div class="category-image">
+                                <img src="courseinfo-poultry-skills.jpg" alt="Poultry Skills">
+                                <div class="facilitator-info">
+                                    <div class="facilitator-avatar">
+                                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Dr. Fatima Yusuf">
+                                    </div>
+                                    <div class="facilitator-details">
+                                        <h4>Dr. Fatima Yusuf</h4>
+                                        <p>Skills Development Expert</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="category-content">
+                                <span class="courses-count">6 Courses</span>
+                                <h3>Poultry Skills Acquisition</h3>
+                                <p>Develop practical skills for successful poultry operations and management.</p>
+                                <button class="btn-outline view-courses" data-category="poultry">View Courses</button>
+                            </div>
+                        </div>
+                        
+                        <div class="category-card">
+                            <div class="category-image">
+                                <img src="courseinfo-mechanised.png">
+                                <div class="facilitator-info">
+                                    <div class="facilitator-avatar">
+                                        <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="Prof. Chinedu Okoro">
+                                    </div>
+                                    <div class="facilitator-details">
+                                        <h4>Prof. Chinedu Okoro</h4>
+                                        <p>Mechanization Expert</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="category-content">
+                                <span class="courses-count">5 Courses</span>
+                                <h3>Mechanized Farming Training</h3>
+                                <p>Learn modern farming equipment operation and maintenance for efficient poultry production.</p>
+                                <button class="btn-outline view-courses" data-category="poultry">View Courses</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-dots" id="poultry-dots">
+                    <!-- Dots will be generated by JavaScript -->
+                </div>
+            </div>
+            
+            <!-- Sub-categories for Poultry & Livestock -->
+            <div class="sub-categories" id="poultry-sub">
+                <div class="section-title">
+                    <h3>Poultry & Livestock Courses</h3>
+                    <p>Select a course to learn more about curriculum, duration, and enrollment details</p>
+                </div>
+                <div class="sub-category-grid">
+                    <div class="sub-category-card">
+                        <h4>Broiler Production</h4>
+                        <p>Comprehensive training on managing broiler farms for optimal growth and profitability.</p>
+                        <div class="course-details">
+                            <span><i class="far fa-clock"></i> 4 Weeks</span>
+                            <span><i class="fas fa-user-graduate"></i> Certificate</span>
+                        </div>
+                        <div class="course-price">₦85,000</div>
+                        <button class="btn-outline">Course Details</button>
+                    </div>
+                    <div class="sub-category-card">
+                        <h4>Layer Production Systems</h4>
+                        <p>Master layer housing, lighting programs, and egg quality management techniques.</p>
+                        <div class="course-details">
+                            <span><i class="far fa-clock"></i> 3 Weeks</span>
+                            <span><i class="fas fa-user-graduate"></i> Certificate</span>
+                        </div>
+                        <div class="course-price">₦75,000</div>
+                        <button class="btn-outline">Course Details</button>
+                    </div>
+                    <div class="sub-category-card">
+                        <h4>Hatchery Basics</h4>
+                        <p>Learn fundamental hatchery operations, egg handling, and chick management.</p>
+                        <div class="course-details">
+                            <span><i class="far fa-clock"></i> 2 Weeks</span>
+                            <span><i class="fas fa-user-graduate"></i> Certificate</span>
+                        </div>
+                        <div class="course-price">₦65,000</div>
+                        <button class="btn-outline">Course Details</button>
+                    </div>
+                    <div class="sub-category-card">
+                        <h4>Poultry Skills Development</h4>
+                        <p>Practical skills training for all aspects of poultry farming operations.</p>
+                        <div class="course-details">
+                            <span><i class="far fa-clock"></i> 2 Weeks</span>
+                            <span><i class="fas fa-user-graduate"></i> Certificate</span>
+                        </div>
+                        <div class="course-price">₦70,000</div>
+                        <button class="btn-outline">Course Details</button>
+                    </div>
+                    <div class="sub-category-card">
+                        <h4>Mechanized Farming Equipment</h4>
+                        <p>Operation and maintenance of modern poultry farming machinery.</p>
+                        <div class="course-details">
+                            <span><i class="far fa-clock"></i> 1 Week</span>
+                            <span><i class="fas fa-user-graduate"></i> Certificate</span>
+                        </div>
+                        <div class="course-price">₦55,000</div>
+                        <button class="btn-outline">Course Details</button>
+                    </div>
+                    <div class="sub-category-card">
+                        <h4>Fish Farming Training</h4>
+                        <p>Comprehensive aquaculture training for sustainable fish production.</p>
+                        <div class="course-details">
+                            <span><i class="far fa-clock"></i> 3 Weeks</span>
+                            <span><i class="fas fa-user-graduate"></i> Certificate</span>
+                        </div>
+                        <div class="course-price">₦80,000</div>
+                        <button class="btn-outline">Course Details</button>
+                    </div>
+                    <div class="sub-category-card">
+                        <h4>Ranching Operations</h4>
+                        <p>Modern ranching techniques for livestock management and production.</p>
+                        <div class="course-details">
+                            <span><i class="far fa-clock"></i> 2 Weeks</span>
+                            <span><i class="fas fa-user-graduate"></i> Certificate</span>
+                        </div>
+                        <div class="course-price">₦75,000</div>
+                        <button class="btn-outline">Course Details</button>
+                    </div>
+                    <div class="sub-category-card">
+                        <h4>Abattoir Operations</h4>
+                        <p>Training on efficient and hygienic slaughterhouse management.</p>
+                        <div class="course-details">
+                            <span><i class="far fa-clock"></i> 2 Weeks</span>
+                            <span><i class="fas fa-user-graduate"></i> Certificate</span>
+                        </div>
+                        <div class="course-price">₦70,000</div>
+                        <button class="btn-outline">Course Details</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Category 2: Crop & Agricultural Training -->
+            <div class="category-carousel">
+                <div class="category-header">
+                    <h3>Crop & Agricultural Training</h3>
+                    <div class="carousel-controls">
+                        <button class="carousel-btn prev-btn" data-category="crop">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button class="carousel-btn next-btn" data-category="crop">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="carousel-container">
+                    <div class="carousel-track" id="crop-track">
+                        <div class="category-card">
+                            <div class="category-image">
+                                <img src="https://images.unsplash.com/photo-1596733430284-f7437764b1a9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Greenhouse Management">
+                                <div class="facilitator-info">
+                                    <div class="facilitator-avatar">
+                                        <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Dr. Ibrahim Sani">
+                                    </div>
+                                    <div class="facilitator-details">
+                                        <h4>Dr. Ibrahim Sani</h4>
+                                        <p>Greenhouse Expert</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="category-content">
+                                <span class="courses-count">7 Courses</span>
+                                <h3>Greenhouse Management</h3>
+                                <p>Learn controlled environment agriculture techniques for year-round crop production.</p>
+                                <button class="btn-outline view-courses" data-category="crop">View Courses</button>
+                            </div>
+                        </div>
+                        
+                        <div class="category-card">
+                            <div class="category-image">
+                                <img src="courseinfo-vegetable.png">
+                                <div class="facilitator-info">
+                                    <div class="facilitator-avatar">
+                                        <img src="https://randomuser.me/api/portraits/women/33.jpg" alt="Dr. Amina Mohammed">
+                                    </div>
+                                    <div class="facilitator-details">
+                                        <h4>Dr. Amina Mohammed</h4>
+                                        <p>Vegetable Specialist</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="category-content">
+                                <span class="courses-count">6 Courses</span>
+                                <h3>Vegetable Production</h3>
+                                <p>Master techniques for high-yield vegetable farming and post-harvest management.</p>
+                                <button class="btn-outline view-courses" data-category="crop">View Courses</button>
+                            </div>
+                        </div>
+                        
+                        <div class="category-card">
+                            <div class="category-image">
+                                <img src="courseinfo-mechanised2.png" alt="Crop Mechanization">
+                                <div class="facilitator-info">
+                                    <div class="facilitator-avatar">
+                                        <img src="https://randomuser.me/api/portraits/men/55.jpg" alt="Dr. Tunde Williams">
+                                    </div>
+                                    <div class="facilitator-details">
+                                        <h4>Dr. Tunde Williams</h4>
+                                        <p>Mechanization Expert</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="category-content">
+                                <span class="courses-count">5 Courses</span>
+                                <h3>Mechanized Crop Farming</h3>
+                                <p>Learn to operate and maintain modern crop farming equipment for efficiency.</p>
+                                <button class="btn-outline view-courses" data-category="crop">View Courses</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-dots" id="crop-dots">
+                    <!-- Dots will be generated by JavaScript -->
+                </div>
+            </div>
+            
+            <!-- Sub-categories for Crop & Agricultural Training -->
+            <div class="sub-categories" id="crop-sub">
+                <div class="section-title">
+                    <h3>Crop & Agricultural Training Courses</h3>
+                    <p>Select a course to learn more about curriculum, duration, and enrollment details</p>
+                </div>
+                <div class="sub-category-grid">
+                    <div class="sub-category-card">
+                        <h4>Greenhouse Management</h4>
+                        <p>Design, construction, and management of efficient greenhouse systems.</p>
+                        <div class="course-details">
+                            <span><i class="far fa-clock"></i> 4 Weeks</span>
+                            <span><i class="fas fa-user-graduate"></i> Certificate</span>
+                        </div>
+                        <div class="course-price">₦95,000</div>
+                        <button class="btn-outline">Course Details</button>
+                    </div>
+                    <div class="sub-category-card">
+                        <h4>Vegetable Production</h4>
+                        <p>Modern techniques for high-value vegetable cultivation and marketing.</p>
+                        <div class="course-details">
+                            <span><i class="far fa-clock"></i> 3 Weeks</span>
+                            <span><i class="fas fa-user-graduate"></i> Certificate</span>
+                        </div>
+                        <div class="course-price">₦75,000</div>
+                        <button class="btn-outline">Course Details</button>
+                    </div>
+                    <div class="sub-category-card">
+                        <h4>Mechanized Crop Farming</h4>
+                        <p>Operation and maintenance of tractors, harvesters, and other farm machinery.</p>
+                        <div class="course-details">
+                            <span><i class="far fa-clock"></i> 3 Weeks</span>
+                            <span><i class="fas fa-user-graduate"></i> Certificate</span>
+                        </div>
+                        <div class="course-price">₦80,000</div>
+                        <button class="btn-outline">Course Details</button>
+                    </div>
+                    <div class="sub-category-card">
+                        <h4>Agrochemical Handling & Safety</h4>
+                        <p>Safe application, storage, and disposal of agricultural chemicals.</p>
+                        <div class="course-details">
+                            <span><i class="far fa-clock"></i> 2 Weeks</span>
+                            <span><i class="fas fa-user-graduate"></i> Certificate</span>
+                        </div>
+                        <div class="course-price">₦60,000</div>
+                        <button class="btn-outline">Course Details</button>
+                    </div>
+                    <div class="sub-category-card">
+                        <h4>Fertilizer Production & Application</h4>
+                        <p>Manufacturing and proper application of organic and inorganic fertilizers.</p>
+                        <div class="course-details">
+                            <span><i class="far fa-clock"></i> 2 Weeks</span>
+                            <span><i class="fas fa-user-graduate"></i> Certificate</span>
+                        </div>
+                        <div class="course-price">₦70,000</div>
+                        <button class="btn-outline">Course Details</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Category 3: Agricultural Business & Technical Skills -->
+            <div class="category-carousel">
+                <div class="category-header">
+                    <h3>Agricultural Business & Technical Skills</h3>
+                    <div class="carousel-controls">
+                        <button class="carousel-btn prev-btn" data-category="business">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button class="carousel-btn next-btn" data-category="business">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="carousel-container">
+                    <div class="carousel-track" id="business-track">
+                        <div class="category-card">
+                            <div class="category-image">
+                                <img src="courseinfo-product-marketing.jpg">
+                                <div class="facilitator-info">
+                                    <div class="facilitator-avatar">
+                                        <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Dr. Samuel Adeyemi">
+                                    </div>
+                                    <div class="facilitator-details">
+                                        <h4>Dr. Samuel Adeyemi</h4>
+                                        <p>Marketing Specialist</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="category-content">
+                                <span class="courses-count">6 Courses</span>
+                                <h3>Agricultural Product Marketing</h3>
+                                <p>Learn effective strategies for marketing agricultural products locally and internationally.</p>
+                                <button class="btn-outline view-courses" data-category="business">View Courses</button>
+                            </div>
+                        </div>
+                        
+                        <div class="category-card">
+                            <div class="category-image">
+                                <img src="courseinfo-agricultural-product-marketing.jpg">
+                                <div class="facilitator-info">
+                                    <div class="facilitator-avatar">
+                                        <img src="https://randomuser.me/api/portraits/women/28.jpg" alt="Dr. Grace Okafor">
+                                    </div>
+                                    <div class="facilitator-details">
+                                        <h4>Dr. Grace Okafor</h4>
+                                        <p>Trade Expert</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="category-content">
+                                <span class="courses-count">5 Courses</span>
+                                <h3>Agricultural Import/Export</h3>
+                                <p>Master the complexities of international agricultural trade and regulations.</p>
+                                <button class="btn-outline view-courses" data-category="business">View Courses</button>
+                            </div>
+                        </div>
+                        
+                        <div class="category-card">
+                            <div class="category-image">
+                                <img src="courseinfo-agricultural-machine-operation.jpg" alt="Machinery Operation">
+                                <div class="facilitator-info">
+                                    <div class="facilitator-avatar">
+                                        <img src="https://randomuser.me/api/portraits/men/62.jpg" alt="Dr. Femi Balogun">
+                                    </div>
+                                    <div class="facilitator-details">
+                                        <h4>Dr. Femi Balogun</h4>
+                                        <p>Machinery Specialist</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="category-content">
+                                <span class="courses-count">4 Courses</span>
+                                <h3>Agricultural Machinery Operation</h3>
+                                <p>Training on operation, maintenance, and troubleshooting of farm machinery.</p>
+                                <button class="btn-outline view-courses" data-category="business">View Courses</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-dots" id="business-dots">
+                    <!-- Dots will be generated by JavaScript -->
+                </div>
+            </div>
+            
+            <!-- Sub-categories for Agricultural Business & Technical Skills -->
+            <div class="sub-categories" id="business-sub">
+                <div class="section-title">
+                    <h3>Agricultural Business & Technical Skills Courses</h3>
+                    <p>Select a course to learn more about curriculum, duration, and enrollment details</p>
+                </div>
+                <div class="sub-category-grid">
+                    <div class="sub-category-card">
+                        <h4>Marketing of Agricultural Products</h4>
+                        <p>Develop effective marketing strategies for agricultural commodities.</p>
+                        <div class="course-details">
+                            <span><i class="far fa-clock"></i> 3 Weeks</span>
+                            <span><i class="fas fa-user-graduate"></i> Certificate</span>
+                        </div>
+                        <div class="course-price">₦75,000</div>
+                        <button class="btn-outline">Course Details</button>
+                    </div>
+                    <div class="sub-category-card">
+                        <h4>Import/Export of Agricultural Products</h4>
+                        <p>Navigate international trade regulations and logistics for agricultural goods.</p>
+                        <div class="course-details">
+                            <span><i class="far fa-clock"></i> 2 Weeks</span>
+                            <span><i class="fas fa-user-graduate"></i> Certificate</span>
+                        </div>
+                        <div class="course-price">₦65,000</div>
+                        <button class="btn-outline">Course Details</button>
+                    </div>
+                    <div class="sub-category-card">
+                        <h4>Agricultural Machinery Operation</h4>
+                        <p>Hands-on training with modern farming equipment and machinery.</p>
+                        <div class="course-details">
+                            <span><i class="far fa-clock"></i> 2 Weeks</span>
+                            <span><i class="fas fa-user-graduate"></i> Certificate</span>
+                        </div>
+                        <div class="course-price">₦70,000</div>
+                        <button class="btn-outline">Course Details</button>
+                    </div>
+                    <div class="sub-category-card">
+                        <h4>Equipment Maintenance & Repair</h4>
+                        <p>Learn preventive maintenance and basic repair of agricultural machinery.</p>
+                        <div class="course-details">
+                            <span><i class="far fa-clock"></i> 1 Week</span>
+                            <span><i class="fas fa-user-graduate"></i> Certificate</span>
+                        </div>
+                        <div class="course-price">₦55,000</div>
+                        <button class="btn-outline">Course Details</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Category 4: Renewable Energy Training -->
+            <div class="category-carousel">
+                <div class="category-header">
+                    <h3>Renewable Energy Training</h3>
+                    <div class="carousel-controls">
+                        <button class="carousel-btn prev-btn" data-category="energy">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button class="carousel-btn next-btn" data-category="energy">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="carousel-container">
+                    <div class="carousel-track" id="energy-track">
+                        <div class="category-card">
+                            <div class="category-image">
+                                <img src="courseinfo-agricultural-waste-management.jpg">
+                                <div class="facilitator-info">
+                                    <div class="facilitator-avatar">
+                                        <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Dr. Samuel Adeyemi">
+                                    </div>
+                                    <div class="facilitator-details">
+                                        <h4>Dr. Samuel Adeyemi</h4>
+                                        <p>Energy Specialist</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="category-content">
+                                <span class="courses-count">4 Courses</span>
+                                <h3>Agricultural Waste Management</h3>
+                                <p>Learn to convert agricultural waste into valuable energy resources.</p>
+                                <button class="btn-outline view-courses" data-category="energy">View Courses</button>
+                            </div>
+                        </div>
+                        
+                        <div class="category-card">
+                            <div class="category-image">
+                                <img src="courseinfo-sustainability-energy.jpg" alt="Sustainability">
+                                <div class="facilitator-info">
+                                    <div class="facilitator-avatar">
+                                        <img src="https://randomuser.me/api/portraits/women/28.jpg" alt="Dr. Grace Okafor">
+                                    </div>
+                                    <div class="facilitator-details">
+                                        <h4>Dr. Grace Okafor</h4>
+                                        <p>Sustainability Expert</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="category-content">
+                                <span class="courses-count">3 Courses</span>
+                                <h3>Sustainability & Energy Programs</h3>
+                                <p>Implement sustainable energy solutions for agricultural operations.</p>
+                                <button class="btn-outline view-courses" data-category="energy">View Courses</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-dots" id="energy-dots">
+                    <!-- Dots will be generated by JavaScript -->
+                </div>
+            </div>
+            
+            <!-- Sub-categories for Renewable Energy Training -->
+            <div class="sub-categories" id="energy-sub">
+                <div class="section-title">
+                    <h3>Renewable Energy Training Courses</h3>
+                    <p>Select a course to learn more about curriculum, duration, and enrollment details</p>
+                </div>
+                <div class="sub-category-grid">
+                    <div class="sub-category-card">
+                        <h4>Agricultural Waste Management</h4>
+                        <p>Techniques for converting farm waste into biogas and other energy sources.</p>
+                        <div class="course-details">
+                            <span><i class="far fa-clock"></i> 2 Weeks</span>
+                            <span><i class="fas fa-user-graduate"></i> Certificate</span>
+                        </div>
+                        <div class="course-price">₦65,000</div>
+                        <button class="btn-outline">Course Details</button>
+                    </div>
+                    <div class="sub-category-card">
+                        <h4>Sustainability in Agriculture</h4>
+                        <p>Implementing sustainable practices for long-term agricultural productivity.</p>
+                        <div class="course-details">
+                            <span><i class="far fa-clock"></i> 2 Weeks</span>
+                            <span><i class="fas fa-user-graduate"></i> Certificate</span>
+                        </div>
+                        <div class="course-price">₦60,000</div>
+                        <button class="btn-outline">Course Details</button>
+                    </div>
+                    <div class="sub-category-card">
+                        <h4>Renewable Energy Programs</h4>
+                        <p>Design and implementation of solar, wind, and biomass energy systems for farms.</p>
+                        <div class="course-details">
+                            <span><i class="far fa-clock"></i> 3 Weeks</span>
+                            <span><i class="fas fa-user-graduate"></i> Certificate</span>
+                        </div>
+                        <div class="course-price">₦75,000</div>
+                        <button class="btn-outline">Course Details</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Category 5: Professional Development & Extension -->
+            <div class="category-carousel">
+                <div class="category-header">
+                    <h3>Professional Development & Extension</h3>
+                    <div class="carousel-controls">
+                        <button class="carousel-btn prev-btn" data-category="professional">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button class="carousel-btn next-btn" data-category="professional">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="carousel-container">
+                    <div class="carousel-track" id="professional-track">
+                        <div class="category-card">
+                            <div class="category-image">
+                                <img src="courseinfo-workshop.jpg" alt="Workshops">
+                                <div class="facilitator-info">
+                                    <div class="facilitator-avatar">
+                                        <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Dr. Samuel Adeyemi">
+                                    </div>
+                                    <div class="facilitator-details">
+                                        <h4>Dr. Samuel Adeyemi</h4>
+                                        <p>Professional Development</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="category-content">
+                                <span class="courses-count">5 Courses</span>
+                                <h3>Workshops & Seminars</h3>
+                                <p>Participate in specialized workshops and seminars for continuous learning.</p>
+                                <button class="btn-outline view-courses" data-category="professional">View Courses</button>
+                            </div>
+                        </div>
+                        
+                        <div class="category-card">
+                            <div class="category-image">
+                                <img src="courseinfo-agricultural-consultancy.jpg" alt="Consultancy">
+                                <div class="facilitator-info">
+                                    <div class="facilitator-avatar">
+                                        <img src="https://randomuser.me/api/portraits/women/28.jpg" alt="Dr. Grace Okafor">
+                                    </div>
+                                    <div class="facilitator-details">
+                                        <h4>Dr. Grace Okafor</h4>
+                                        <p>Consultancy Expert</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="category-content">
+                                <span class="courses-count">4 Courses</span>
+                                <h3>Agricultural Consultancy</h3>
+                                <p>Develop skills to provide expert advice and solutions for agricultural challenges.</p>
+                                <button class="btn-outline view-courses" data-category="professional">View Courses</button>
+                            </div>
+                        </div>
+                        
+                        <div class="category-card">
+                            <div class="category-image">
+                                <img src="courseinfo-agricultural-extension.jpg" alt="Networking">
+                                <div class="facilitator-info">
+                                    <div class="facilitator-avatar">
+                                        <img src="https://randomuser.me/api/portraits/men/62.jpg" alt="Dr. Femi Balogun">
+                                    </div>
+                                    <div class="facilitator-details">
+                                        <h4>Dr. Femi Balogun</h4>
+                                        <p>Extension Specialist</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="category-content">
+                                <span class="courses-count">3 Courses</span>
+                                <h3>Networking & Extension Services</h3>
+                                <p>Build professional networks and deliver effective agricultural extension services.</p>
+                                <button class="btn-outline view-courses" data-category="professional">View Courses</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-dots" id="professional-dots">
+                    <!-- Dots will be generated by JavaScript -->
+                </div>
+            </div>
+            
+            <!-- Sub-categories for Professional Development & Extension -->
+            <div class="sub-categories" id="professional-sub">
+                <div class="section-title">
+                    <h3>Professional Development & Extension Courses</h3>
+                    <p>Select a course to learn more about curriculum, duration, and enrollment details</p>
+                </div>
+                <div class="sub-category-grid">
+                    <div class="sub-category-card">
+                        <h4>Agricultural Workshops</h4>
+                        <p>Interactive workshops on current agricultural trends and technologies.</p>
+                        <div class="course-details">
+                            <span><i class="far fa-clock"></i> 1-2 Days</span>
+                            <span><i class="fas fa-user-graduate"></i> Certificate</span>
+                        </div>
+                        <div class="course-price">₦25,000</div>
+                        <button class="btn-outline">Course Details</button>
+                    </div>
+                    <div class="sub-category-card">
+                        <h4>Seminars & Conferences</h4>
+                        <p>Participate in industry seminars and conferences for knowledge exchange.</p>
+                        <div class="course-details">
+                            <span><i class="far fa-clock"></i> 1-3 Days</span>
+                            <span><i class="fas fa-user-graduate"></i> Certificate</span>
+                        </div>
+                        <div class="course-price">₦30,000</div>
+                        <button class="btn-outline">Course Details</button>
+                    </div>
+                    <div class="sub-category-card">
+                        <h4>Agricultural Consultancy</h4>
+                        <p>Develop skills to provide expert agricultural advisory services.</p>
+                        <div class="course-details">
+                            <span><i class="far fa-clock"></i> 2 Weeks</span>
+                            <span><i class="fas fa-user-graduate"></i> Certificate</span>
+                        </div>
+                        <div class="course-price">₦70,000</div>
+                        <button class="btn-outline">Course Details</button>
+                    </div>
+                    <div class="sub-category-card">
+                        <h4>Agricultural Networking</h4>
+                        <p>Build professional connections within the agricultural industry.</p>
+                        <div class="course-details">
+                            <span><i class="far fa-clock"></i> 1 Week</span>
+                            <span><i class="fas fa-user-graduate"></i> Certificate</span>
+                        </div>
+                        <div class="course-price">₦50,000</div>
+                        <button class="btn-outline">Course Details</button>
+                    </div>
+                    <div class="sub-category-card">
+                        <h4>Extension Services</h4>
+                        <p>Learn to deliver effective agricultural extension programs to farmers.</p>
+                        <div class="course-details">
+                            <span><i class="far fa-clock"></i> 2 Weeks</span>
+                            <span><i class="fas fa-user-graduate"></i> Certificate</span>
+                        </div>
+                        <div class="course-price">₦65,000</div>
+                        <button class="btn-outline">Course Details</button>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Course Schedule Section -->
+    <section class="course-schedule">
+        <div class="container">
+            <div class="section-title">
+                <h2>Course Schedule</h2>
+                <p>Check upcoming course dates and availability for our training programs</p>
+            </div>
+            
+            <div class="schedule-container">
+                <div class="schedule-tabs">
+                    <button class="schedule-tab active" data-tab="upcoming">Upcoming Courses</button>
+                    <button class="schedule-tab" data-tab="in-progress">In Progress</button>
+                    <button class="schedule-tab" data-tab="completed">Completed</button>
+                </div>
+                
+                <div class="schedule-content active" id="upcoming-schedule">
+                    <table class="schedule-table">
+                        <thead>
+                            <tr>
+                                <th>Course Name</th>
+                                <th>Start Date</th>
+                                <th>Duration</th>
+                                <th>Location</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="course-name">Poultry and Livestock Training</td>
+                                <td class="course-date">March 15, 2025</td>
+                                <td>4 Weeks</td>
+                                <td>Kaizen Training Center</td>
+                                <td><span class="course-status status-open">Open for Registration</span></td>
+                            </tr>
+                            <tr>
+                                <td class="course-name">Crop and Agricultural Training</td>
+                                <td class="course-date">April 5, 2025</td>
+                                <td>4 Weeks</td>
+                                <td>Kaizen Training Center</td>
+                                <td><span class="course-status status-open">Open for Registration</span></td>
+                            </tr>
+                            <tr>
+                                <td class="course-name">Agricultural Business and Technical Skills</td>
+                                <td class="course-date">May 10, 2025</td>
+                                <td>2 Weeks</td>
+                                <td>Online</td>
+                                <td><span class="course-status status-upcoming">Registration Opens Soon</span></td>
+                            </tr>
+                            <tr>
+                                <td class="course-name">Professional Development and Extension</td>
+                                <td class="course-date">June 1, 2025</td>
+                                <td>3 Weeks</td>
+                                <td>Kaizen Training Center</td>
+                                <td><span class="course-status status-upcoming">Registration Opens Soon</span></td>
+                            </tr>
+                            <tr>
+                                <td class="course-name">Renewable Energy Training</td>
+                                <td class="course-date">June 15, 2025</td>
+                                <td>3 Weeks</td>
+                                <td>Kaizen Training Center</td>
+                                <td><span class="course-status status-upcoming">Registration Opens Soon</span></td>
+                            </tr>
+                            </tbody>
+                    </table>
+                </div>
+                
+                <div class="schedule-content" id="in-progress-schedule">
+                    <table class="schedule-table">
+                        <thead>
+                            <tr>
+                                <th>Course Name</th>
+                                <th>Start Date</th>
+                                <th>End Date</th>
+                                <th>Location</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="course-name">Poultry and Livesstock Training</td>
+                                <td class="course-date">February 10, 2025</td>
+                                <td>March 10, 2025</td>
+                                <td>Kaizen Training Center</td>
+                                <td><span class="course-status status-full">In Progress</span></td>
+                            </tr>
+                            <tr>
+                                <td class="course-name">Crop and Agricultural Management</td>
+                                <td class="course-date">February 15, 2025</td>
+                                <td>March 15, 2025</td>
+                                <td>Online</td>
+                                <td><span class="course-status status-full">In Progress</span></td>
+                            </tr>
+                            <tr>
+                                <td class="course-name">Professional Development and Extension</td>
+                                <td class="course-date">February 20, 2025</td>
+                                <td>March 6, 2025</td>
+                                <td>Kaizen Training Center</td>
+                                <td><span class="course-status status-full">In Progress</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="schedule-content" id="completed-schedule">
+                    <table class="schedule-table">
+                        <thead>
+                            <tr>
+                                <th>Course Name</th>
+                                <th>Completion Date</th>
+                                <th>Duration</th>
+                                <th>Location</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="course-name">Advanced Poultry Production</td>
+                                <td class="course-date">January 30, 2025</td>
+                                <td>4 Weeks</td>
+                                <td>Kaizen Training Center</td>
+                                <td><span class="course-status">Completed</span></td>
+                            </tr>
+                            <tr>
+                                <td class="course-name">Hatchery Management</td>
+                                <td class="course-date">December 15, 2024</td>
+                                <td>4 Weeks</td>
+                                <td>Kaizen Training Center</td>
+                                <td><span class="course-status">Completed</span></td>
+                            </tr>
+                            <tr>
+                                <td class="course-name">Poultry Waste Management</td>
+                                <td class="course-date">November 20, 2024</td>
+                                <td>1 Week</td>
+                                <td>Kaizen Training Center</td>
+                                <td><span class="course-status">Completed</span></td>
+                            </tr>
+                            <tr>
+                                <td class="course-name">Vaccination Techniques</td>
+                                <td class="course-date">October 10, 2024</td>
+                                <td>2 Weeks</td>
+                                <td>Kaizen Training Center</td>
+                                <td><span class="course-status">Completed</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="waves">
+            <div class="wave wave1"></div>
+            <div class="wave wave2"></div>
+            <div class="wave wave3"></div>
+        </div>
+        
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-grid">
+                       <div class="footer-column">
+                        <h3>Kaizen Poultry Skills Academy</h3>
+                        <p>Providing innovative poultry training, consulting, and business solutions to help organizations thrive in the agricultural industry.</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h3>Quick Links</h3>
+                        <ul class="footer-links">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="training.html">Training Programs</a></li>
+                            <li><a href="courseinformation.html">Corse information </a></li>
+                            <li><a href="services.html">Services</a></li>
+                            <li><a href="frequentlyasked.html">FAQ</a></li>
+                            <li><a href="partners.html">Partners</a></li>
+
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h3>Services</h3>
+                        <ul class="footer-links">
+                            <li><a href="#">Agricultural Services</a></li>
+                            <li><a href="#">Consultancy & Training Services</a></li>
+                            <li><a href="#">Commercial & Trading Services</a></li>
+                            <li><a href="#">Industrial & Mnufacturing Services</a></li>
+                            <li><a href="#">Transport & Logistics Services</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h3>Contact Info</h3>
+                        <ul class="footer-links">
+                            <li><i class="fas fa-map-marker-alt"></i> Block 5, Flat 3,Dutsinma Close.Area 1,Section 2,Garki,Abuja.</li>
+                             <li><i class="fas fa-phone"></i> 08055057189, 090369646693.</li>
+                            <li><i class="fas fa-envelope"></i> Kaizenacademy@gmail.com</li>
+                            <li><i class="fas fa-clock"></i> Mon-Fri: 9AM - 6PM</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Kaizen Poultry Skills Academy Limited. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Background image loading check
+        document.addEventListener('DOMContentLoaded', function() {
+            const heroSection = document.getElementById('course-hero');
+            const bgImage = new Image();
+            
+            // Set the same image URL as in CSS
+            bgImage.src = 'https://images.unsplash.com/photo-1589923189623-12dac119a3c9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80';
+            
+            bgImage.onload = function() {
+                console.log('Hero background image loaded successfully');
+            };
+            
+            bgImage.onerror = function() {
+                console.log('Hero background image failed to load, using fallback');
+                heroSection.classList.add('fallback-bg');
+            };
+
+            // Toggle menu functionality
+            const hamburger = document.querySelector('.hamburger');
+            const navMenu = document.querySelector('.nav-menu');
+
+            hamburger.addEventListener('click', () => {
+                hamburger.classList.toggle('active');
+                navMenu.classList.toggle('active');
+            });
+
+            // Close menu when clicking on a link
+            document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            }));
+
+            // Carousel functionality with dots
+            const carouselData = {
+                'poultry': { track: 'poultry-track', dots: 'poultry-dots', currentIndex: 0 },
+                'crop': { track: 'crop-track', dots: 'crop-dots', currentIndex: 0 },
+                'business': { track: 'business-track', dots: 'business-dots', currentIndex: 0 },
+                'energy': { track: 'energy-track', dots: 'energy-dots', currentIndex: 0 },
+                'professional': { track: 'professional-track', dots: 'professional-dots', currentIndex: 0 }
+            };
+
+            // Initialize carousels with dots
+            function initializeCarousels() {
+                for (const category in carouselData) {
+                    const track = document.getElementById(carouselData[category].track);
+                    const dotsContainer = document.getElementById(carouselData[category].dots);
+                    const cards = track.querySelectorAll('.category-card');
+                    
+                    // Create dots
+                    for (let i = 0; i < cards.length; i++) {
+                        const dot = document.createElement('button');
+                        dot.classList.add('carousel-dot');
+                        if (i === 0) dot.classList.add('active');
+                        dot.addEventListener('click', () => {
+                            moveToSlide(category, i);
+                        });
+                        dotsContainer.appendChild(dot);
+                    }
+                    
+                    // Set initial card width based on screen size
+                    updateCardWidth(category);
+                }
+            }
+
+            // Update card width based on screen size
+            function updateCardWidth(category) {
+                const track = document.getElementById(carouselData[category].track);
+                const cards = track.querySelectorAll('.category-card');
+                const containerWidth = track.parentElement.offsetWidth;
+                
+                // Determine how many cards to show based on screen width
+                let cardsToShow = 1;
+                if (window.innerWidth >= 769 && window.innerWidth < 1024) {
+                    cardsToShow = 2;
+                } else if (window.innerWidth >= 1024) {
+                    cardsToShow = 3;
+                }
+                
+                const cardWidth = (containerWidth / cardsToShow) - 20; // 20px for gap
+                cards.forEach(card => {
+                    card.style.minWidth = `${cardWidth}px`;
+                });
+                
+                // Update track position
+                moveToSlide(category, carouselData[category].currentIndex);
+            }
+
+            // Move carousel to specific slide
+            function moveToSlide(category, index) {
+                const track = document.getElementById(carouselData[category].track);
+                const cards = track.querySelectorAll('.category-card');
+                const dots = document.querySelectorAll(`#${carouselData[category].dots} .carousel-dot`);
+                
+                // Update current index
+                carouselData[category].currentIndex = index;
+                
+                // Calculate the translateX value
+                const cardWidth = cards[0].offsetWidth + 20; // card width + gap
+                const translateX = -index * cardWidth;
+                track.style.transform = `translateX(${translateX}px)`;
+                
+                // Update active dot
+                dots.forEach((dot, i) => {
+                    dot.classList.toggle('active', i === index);
+                });
+            }
+
+            // Carousel button functionality
+            document.querySelectorAll('.carousel-btn').forEach(button => {
+                button.addEventListener('click', () => {
+                    const direction = button.classList.contains('prev-btn') ? -1 : 1;
+                    const category = button.getAttribute('data-category');
+                    const track = document.getElementById(carouselData[category].track);
+                    const cards = track.querySelectorAll('.category-card');
+                    
+                    let newIndex = carouselData[category].currentIndex + direction;
+                    
+                    // Handle wrap-around
+                    if (newIndex < 0) {
+                        newIndex = cards.length - 1;
+                    } else if (newIndex >= cards.length) {
+                        newIndex = 0;
+                    }
+                    
+                    moveToSlide(category, newIndex);
+                });
+            });
+
+            // Touch functionality for carousels
+            document.querySelectorAll('.carousel-track').forEach(track => {
+                let startX = 0;
+                let currentX = 0;
+                let isDragging = false;
+                
+                track.addEventListener('touchstart', (e) => {
+                    startX = e.touches[0].clientX;
+                    isDragging = true;
+                });
+                
+                track.addEventListener('touchmove', (e) => {
+                    if (!isDragging) return;
+                    currentX = e.touches[0].clientX;
+                });
+                
+                track.addEventListener('touchend', () => {
+                    if (!isDragging) return;
+                    isDragging = false;
+                    
+                    const diff = startX - currentX;
+                    const category = Object.keys(carouselData).find(key => 
+                        carouselData[key].track === track.id
+                    );
+                    
+                    if (Math.abs(diff) > 50) { // Minimum swipe distance
+                        if (diff > 0) {
+                            // Swipe left - next
+                            const direction = 1;
+                            let newIndex = carouselData[category].currentIndex + direction;
+                            const cards = track.querySelectorAll('.category-card');
+                            
+                            if (newIndex >= cards.length) {
+                                newIndex = 0;
+                            }
+                            
+                            moveToSlide(category, newIndex);
+                        } else {
+                            // Swipe right - previous
+                            const direction = -1;
+                            let newIndex = carouselData[category].currentIndex + direction;
+                            
+                            if (newIndex < 0) {
+                                const cards = track.querySelectorAll('.category-card');
+                                newIndex = cards.length - 1;
+                            }
+                            
+                            moveToSlide(category, newIndex);
+                        }
+                    }
+                });
+            });
+
+            // View courses button functionality
+            document.querySelectorAll('.view-courses').forEach(button => {
+                button.addEventListener('click', () => {
+                    const category = button.getAttribute('data-category');
+                    const subCategory = document.getElementById(`${category}-sub`);
+                    
+                    // Hide all sub-categories first
+                    document.querySelectorAll('.sub-categories').forEach(sub => {
+                        sub.classList.remove('active');
+                    });
+                    
+                    // Show the selected sub-category
+                    subCategory.classList.add('active');
+                    
+                    // Scroll to the sub-category
+                    subCategory.scrollIntoView({ behavior: 'smooth' });
+                });
+            });
+
+            // Schedule tabs functionality
+            document.querySelectorAll('.schedule-tab').forEach(tab => {
+                tab.addEventListener('click', () => {
+                    const tabId = tab.getAttribute('data-tab');
+                    
+                    // Remove active class from all tabs and contents
+                    document.querySelectorAll('.schedule-tab').forEach(t => {
+                        t.classList.remove('active');
+                    });
+                    document.querySelectorAll('.schedule-content').forEach(c => {
+                        c.classList.remove('active');
+                    });
+                    
+                    // Add active class to clicked tab and corresponding content
+                    tab.classList.add('active');
+                    document.getElementById(`${tabId}-schedule`).classList.add('active');
+                });
+            });
+
+            // Simple animation for category cards when they come into view
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            // Observe category cards
+            document.querySelectorAll('.category-card').forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                observer.observe(card);
+            });
+
+            // Initialize carousels on page load
+            initializeCarousels();
+            
+            // Update carousel on window resize
+            window.addEventListener('resize', () => {
+                for (const category in carouselData) {
+                    updateCardWidth(category);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

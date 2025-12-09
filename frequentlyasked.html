@@ -1,0 +1,1784 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frequently Asked Questions | Kaizen Poultry Skills Academy</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary: #1a472a;
+            --secondary: #2e7d32;
+            --accent: #4caf50;
+            --light: #e8f5e9;
+            --dark: #1b5e20;
+            --text: #333;
+            --gray: #666;
+            --light-gray: #f5f5f5;
+            --white: #fff;
+        }
+
+        body {
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-color: var(--light-gray);
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: var(--primary);
+            color: white;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            position: relative;
+        }
+
+      /* Logo Responsiveness - First Approach */
+        .logo {
+            display: flex;
+            align-items: center;
+            transition: all 0.3s ease;
+            width: 100px;
+        }
+
+        .logo img {
+            transition: all 0.3s ease;
+        }
+
+        /* Default logo size for larger screens */
+        .logo img {
+            width: ;
+        }
+
+        /* Progressive logo sizing for different screen sizes */
+        @media (max-width: 1200px) {
+            .logo img {
+                width: 100px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .logo img {
+                width: 15%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .logo img {
+                width: 20%;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .logo img {
+                width: 25%;
+                min-width: 120px; /* Prevents logo from becoming too small */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo img {
+                width: 30%;
+                min-width: 120px;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .logo img {
+                width: 35%;
+                min-width: 100px;
+            }
+        }
+
+        /* For very small screens */
+        @media (max-width: 320px) {
+            .logo img {
+                width: 40%;
+                min-width: 90px;
+            }
+        }
+
+        .logo i {
+            margin-right: 10px;
+            color: var(--accent);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-item {
+            position: relative;
+            margin-left: 20px;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 10px 15px;
+            display: flex;
+            align-items: center;
+            transition: all 0.3s ease;
+            border-radius: 4px;
+        }
+
+        .nav-link:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--accent);
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            z-index: 1002;
+            background: none;
+            border: none;
+            color: white;
+            padding: 5px;
+        }
+
+        /* Hero Section */
+        .faq-hero {
+            background: 
+                linear-gradient(rgba(26, 71, 42, 0.85), rgba(46, 125, 50, 0.8)), 
+                url('frequentlyasked-bg.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: white;
+            padding: 180px 0 100px;
+            text-align: center;
+            margin-top: 70px;
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        .faq-hero.fallback-bg::before {
+            opacity: 1;
+        }
+
+        .faq-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .faq-hero p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Search and Filter Section */
+        .search-filter {
+            padding: 40px 0;
+            background-color: var(--white);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .search-container {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .search-box {
+            flex: 1;
+            position: relative;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 15px 50px 15px 20px;
+            border: 2px solid var(--light);
+            border-radius: 30px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .search-box input:focus {
+            border-color: var(--accent);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
+        }
+
+        .search-icon {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--gray);
+        }
+
+        .filter-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .filter-btn {
+            padding: 10px 20px;
+            background-color: var(--light);
+            border: none;
+            border-radius: 30px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .filter-btn:hover {
+            background-color: var(--accent);
+            color: white;
+        }
+
+        .filter-btn.active {
+            background-color: var(--accent);
+            color: white;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: -10px;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background-color: var(--secondary);
+        }
+
+        .section-title p {
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .faq-category {
+            margin-bottom: 50px;
+        }
+
+        .category-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--light);
+        }
+
+        .category-icon {
+            width: 60px;
+            height: 60px;
+            background-color: var(--light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            color: var(--primary);
+            font-size: 1.5rem;
+        }
+
+        .category-title h3 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+
+        .category-title p {
+            color: var(--gray);
+        }
+
+        .faq-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .faq-item {
+            background-color: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .faq-question {
+            padding: 20px;
+            background-color: var(--light);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background-color: #e0f2e1;
+        }
+
+        .faq-question h4 {
+            font-size: 1.2rem;
+            color: var(--primary);
+            margin: 0;
+        }
+
+        .faq-toggle {
+            color: var(--accent);
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 20px;
+            max-height: 500px;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(180deg);
+        }
+
+        .training-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+            padding: 15px;
+            background-color: var(--light);
+            border-radius: 8px;
+        }
+
+        .detail-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .detail-label {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 5px;
+            font-size: 0.9rem;
+        }
+
+        .detail-value {
+            color: var(--text);
+        }
+
+        /* Course Cards */
+        .course-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            margin-bottom: 20px;
+        }
+
+        .course-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .course-header {
+            background-color: var(--primary);
+            color: white;
+            padding: 20px;
+        }
+
+        .course-header h4 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        .course-date {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .course-content {
+            padding: 20px;
+        }
+
+        .course-details {
+            list-style: none;
+            margin-bottom: 15px;
+        }
+
+        .course-details li {
+            padding: 8px 0;
+            border-bottom: 1px solid #f1f1f1;
+            display: flex;
+            align-items: center;
+        }
+
+        .course-details li:last-child {
+            border-bottom: none;
+        }
+
+        .course-details li i {
+            color: var(--accent);
+            margin-right: 10px;
+            font-size: 0.9rem;
+        }
+
+        .course-price {
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: 15px;
+        }
+
+        /* Location Section */
+        .location-section {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+
+        .location-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            align-items: center;
+        }
+
+        .location-info {
+            padding-right: 20px;
+        }
+
+        .location-info h3 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .location-details {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+
+        .location-details li {
+            padding: 10px 0;
+            border-bottom: 1px solid #f1f1f1;
+            display: flex;
+            align-items: center;
+        }
+
+        .location-details li:last-child {
+            border-bottom: none;
+        }
+
+        .location-details li i {
+            color: var(--accent);
+            margin-right: 10px;
+            font-size: 1.1rem;
+            width: 20px;
+            text-align: center;
+        }
+
+        .location-map {
+            height: 400px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .location-map iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* CTA Section */
+        .cta {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .cta p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            padding: 14px 35px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn:hover {
+            background-color: var(--dark);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .footer-content {
+            padding: 80px 0 40px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 40px;
+            height: 3px;
+            background-color: var(--accent);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+            padding-left: 5px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background-color: var(--accent);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding: 20px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+
+        /* Wave Animation */
+        .waves {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 15vh;
+            min-height: 100px;
+            max-height: 150px;
+        }
+
+        .wave {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" fill="%23ffffff"></path></svg>');
+            background-size: 1200px 100px;
+        }
+
+        .wave1 {
+            animation: wave 30s linear infinite;
+            opacity: 0.7;
+        }
+
+        .wave2 {
+            animation: wave 15s linear infinite reverse;
+            opacity: 0.5;
+        }
+
+        .wave3 {
+            animation: wave 10s linear infinite;
+            opacity: 0.3;
+        }
+
+        @keyframes wave {
+            0% {
+                background-position-x: 0;
+            }
+            100% {
+                background-position-x: 1200px;
+            }
+        }
+
+        /* Search Results */
+        .search-results {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: var(--white);
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .search-results h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 30px;
+            color: var(--gray);
+            font-style: italic;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 0;
+                flex-direction: column;
+                background-color: var(--primary);
+                width: 100%;
+                height: 100vh;
+                text-align: center;
+                transition: 0.3s ease-in-out;
+                box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+                padding: 80px 0;
+                z-index: 999;
+                justify-content: flex-start;
+                align-items: center;
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .nav-item {
+                margin: 15px 0;
+                width: 100%;
+            }
+
+            .nav-link {
+                padding: 15px 20px;
+                width: 100%;
+                justify-content: center;
+                font-size: 1.1rem;
+            }
+
+            .hamburger {
+                display: block;
+                position: relative;
+                z-index: 1002;
+            }
+
+            .hamburger.active i::before {
+                content: "\f00d";
+            }
+
+            .faq-hero {
+                background-attachment: scroll;
+                padding: 150px 0 80px;
+                min-height: 50vh;
+            }
+
+            .faq-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .faq-hero p {
+                font-size: 1.1rem;
+            }
+
+            .search-container {
+                flex-direction: column;
+            }
+
+            .location-container {
+                grid-template-columns: 1fr;
+            }
+
+            .location-info {
+                padding-right: 0;
+            }
+            
+            .category-header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .category-icon {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .faq-hero {
+                padding: 130px 0 60px;
+                min-height: 40vh;
+            }
+
+            .faq-hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .faq-hero p {
+                font-size: 1rem;
+            }
+
+            .btn {
+                padding: 12px 30px;
+                font-size: 1rem;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+
+            .training-details {
+                grid-template-columns: 1fr;
+            }
+            
+            .filter-container {
+                justify-content: flex-start;
+                overflow-x: auto;
+                padding-bottom: 10px;
+            }
+            
+            .filter-btn {
+                flex-shrink: 0;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .faq-hero {
+                min-height: 35vh;
+                padding: 120px 0 50px;
+            }
+
+            .faq-hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .faq-hero p {
+                font-size: 0.95rem;
+            }
+
+            .faq-container {
+                grid-template-columns: 1fr;
+            }
+
+            .location-map {
+                height: 300px;
+            }
+            
+            .search-box input {
+                padding: 12px 45px 12px 15px;
+            }
+            
+            .filter-btn {
+                padding: 8px 16px;
+                font-size: 0.9rem;
+            }
+            
+            .faq-question {
+                padding: 15px;
+            }
+            
+            .faq-question h4 {
+                font-size: 1.1rem;
+            }
+            
+            .category-title h3 {
+                font-size: 1.5rem;
+            }
+            
+            .location-info h3 {
+                font-size: 1.5rem;
+            }
+            
+            .cta h2 {
+                font-size: 2rem;
+            }
+            
+            .cta p {
+                font-size: 1rem;
+            }
+        }
+        
+        /* === NEW LANDSCAPE MODE SOLUTION === */
+        /* Forces the desktop menu to appear and hides the hamburger in landscape orientation on smaller devices (max height 768px). */
+        @media screen and (orientation: landscape) and (max-height: 768px) {
+            /* Show the main navigation menu as a row */
+            .nav-menu {
+                position: static !important;
+                left: auto !important;
+                top: auto !important;
+                flex-direction: row !important;
+                background-color: transparent !important;
+                width: auto !important;
+                height: auto !important;
+                padding: 0 !important;
+                z-index: 1000 !important;
+                box-shadow: none !important;
+                justify-content: flex-end !important;
+                display: flex !important; /* Ensure it's visible, overriding any hidden state */
+            }
+            
+            /* Ensure the 'active' state doesn't override layout properties */
+            .nav-menu.active {
+                left: auto !important;
+            }
+
+            /* Reset nav-item for horizontal layout */
+            .nav-item {
+                margin: 0 0 0 20px !important;
+                width: auto !important;
+            }
+
+            /* Reset nav-link for desktop style */
+            .nav-link {
+                padding: 10px 15px !important;
+                width: auto !important;
+                justify-content: flex-start !important;
+                font-size: 1rem !important;
+            }
+
+            /* Hide the hamburger icon */
+            .hamburger {
+                display: none !important;
+            }
+            
+            /* Reset body overflow to default (important to counter the JS setting) */
+            body {
+                overflow-y: auto !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <img src="kaizen-logo.png" width="10%" height="auto" class="logo" alt="Nakhat Spices Logo">  
+                </a>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="about.html" class="nav-link">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="training.html" class="nav-link">Training</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="courseinformation.html" class="nav-link">Course Info</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="services.html" class="nav-link">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="frequentlyasked.html" class="nav-link active">FAQ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="partners.html" class="nav-link">Partners</a>
+                    </li>
+                </ul>
+                
+                <button class="hamburger" aria-label="Toggle navigation menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <section class="faq-hero" id="faq-hero">
+        <div class="container">
+            <h1>Frequently Asked Questions</h1>
+            <p>Find answers to common questions about our programs, training, services, and location</p>
+        </div>
+    </section>
+
+    <section class="search-filter">
+        <div class="container">
+            <div class="search-container">
+                <div class="search-box">
+                    <input type="text" id="search-input" placeholder="Search for questions, courses, or programs...">
+                    <div class="search-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="filter-container">
+                <button class="filter-btn active" data-filter="all">
+                    <i class="fas fa-th"></i> All Questions
+                </button>
+                <button class="filter-btn" data-filter="programs">
+                    <i class="fas fa-graduation-cap"></i> Programs
+                </button>
+                <button class="filter-btn" data-filter="training">
+                    <i class="fas fa-book"></i> Training Details
+                </button>
+                <button class="filter-btn" data-filter="courses">
+                    <i class="fas fa-certificate"></i> Courses
+                </button>
+                <button class="filter-btn" data-filter="services">
+                    <i class="fas fa-cogs"></i> Services
+                </button>
+                <button class="filter-btn" data-filter="location">
+                    <i class="fas fa-map-marker-alt"></i> Location
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Common Questions</h2>
+                <p>Browse through our frequently asked questions to find the information you need</p>
+            </div>
+            
+            <div class="faq-category" data-category="programs">
+                <div class="category-header">
+                    <div class="category-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="category-title">
+                        <h3>Programs & Courses</h3>
+                        <p>Information about our training programs and courses</p>
+                    </div>
+                </div>
+                
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h4>What types of programs do you offer?</h4>
+                            <div class="faq-toggle">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="faq-answer">
+                            <p>We offer a wide range of agricultural programs including:</p>
+                            <ul>
+                                <li>Poultry & Livestock Training</li>
+                                <li>Crop & Agricultural Training</li>
+                                <li>Agricultural Business & Technical Skills</li>
+                                <li>Renewable Energy Training</li>
+                                <li>Professional Development & Extension</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h4>Do you offer certification for your programs?</h4>
+                            <div class="faq-toggle">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes, we provide certificates of completion for all our programs. Some programs also offer industry-recognized certifications that can enhance your career prospects.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h4>Can I enroll in multiple programs at once?</h4>
+                            <div class="faq-toggle">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes, you can enroll in multiple programs simultaneously. However, we recommend discussing your study plan with our academic advisors to ensure you can manage the workload effectively.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="faq-category" data-category="training">
+                <div class="category-header">
+                    <div class="category-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <div class="category-title">
+                        <h3>Training Details</h3>
+                        <p>Information about training duration, costs, and methods</p>
+                    </div>
+                </div>
+                
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h4>What is the duration of your training programs?</h4>
+                            <div class="faq-toggle">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Training durations vary by program:</p>
+                            <div class="training-details">
+                                <div class="detail-item">
+                                    <span class="detail-label">Short Courses</span>
+                                    <span class="detail-value">1-4 weeks</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Certificate Programs</span>
+                                    <span class="detail-value">2-6 months</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Diploma Programs</span>
+                                    <span class="detail-value">6-12 months</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Specialized Training</span>
+                                    <span class="detail-value">Varies by course</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h4>How much do your training programs cost?</h4>
+                            <div class="faq-toggle">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Costs vary depending on the program and duration:</p>
+                            <div class="training-details">
+                                <div class="detail-item">
+                                    <span class="detail-label">Short Courses</span>
+                                    <span class="detail-value">₦25,000 - ₦85,000</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Certificate Programs</span>
+                                    <span class="detail-value">₦100,000 - ₦250,000</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Diploma Programs</span>
+                                    <span class="detail-value">₦300,000 - ₦600,000</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Payment Plans</span>
+                                    <span class="detail-value">Available for most programs</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h4>What methods of training do you offer?</h4>
+                            <div class="faq-toggle">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="faq-answer">
+                            <p>We offer multiple training methods to suit different learning preferences:</p>
+                            <ul>
+                                <li><strong>In-person classes:</strong> Hands-on training at our facility</li>
+                                <li><strong>Online courses:</strong> Flexible learning from anywhere</li>
+                                <li><strong>Hybrid programs:</strong> Combination of online and in-person</li>
+                                <li><strong>On-site training:</strong> We come to your location</li>
+                                <li><strong>Workshops & Seminars:</strong> Intensive short-term training</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="faq-category" data-category="courses">
+                <div class="category-header">
+                    <div class="category-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <div class="category-title">
+                        <h3>Available Courses</h3>
+                        <p>Information about our specific course offerings</p>
+                    </div>
+                </div>
+                
+                <div class="faq-container">
+                    <div class="course-card">
+                        <div class="course-header">
+                            <h4>Agricultural Product Marketing</h4>
+                            <p class="course-date"><i class="far fa-calendar-alt"></i> Next intake: March 15, 2025</p>
+                        </div>
+                        <div class="course-content">
+                            <p>Learn Effective strategies for marketing agricultural products locally and internationally.</p>
+                            <ul class="course-details">
+                                <li><i class="far fa-clock"></i> Duration: 4 Weeks</li>
+                                <li><i class="fas fa-user-graduate"></i> Certificate: Professional Certificate</li>
+                                <li><i class="fas fa-users"></i> Format: Small Groups</li>
+                                <li><i class="fas fa-map-marker-alt"></i> Location: On-site & Online</li>
+                            </ul>
+                            <div class="course-price">₦85,000</div>
+                            <a href="#" class="btn">Enroll Now</a>
+                        </div>
+                    </div>
+                    
+                    <div class="course-card">
+                        <div class="course-header">
+                            <h4>Sustainability & Energy Programs</h4>
+                            <p class="course-date"><i class="far fa-calendar-alt"></i> Next intake: April 5, 2025</p>
+                        </div>
+                        <div class="course-content">
+                            <p>Implement sustainable energy solutions for agricultural operations.</p>
+                            <ul class="course-details">
+                                <li><i class="far fa-clock"></i> Duration: 3 Weeks</li>
+                                <li><i class="fas fa-user-graduate"></i> Certificate: Advanced Diploma</li>
+                                <li><i class="fas fa-users"></i> Format: Online & Workshop</li>
+                                <li><i class="fas fa-map-marker-alt"></i> Location: Hybrid</li>
+                            </ul>
+                            <div class="course-price">₦120,000</div>
+                            <a href="#" class="btn">Enroll Now</a>
+                        </div>
+                    </div>
+                    
+                    <div class="course-card">
+                        <div class="course-header">
+                            <h4>Biosecurity and Disease Control</h4>
+                            <p class="course-date"><i class="far fa-calendar-alt"></i> Next intake: May 20, 2025</p>
+                        </div>
+                        <div class="course-content">
+                            <p>Implement world-class biosecurity protocols to protect flock health and profitability.</p>
+                            <ul class="course-details">
+                                <li><i class="far fa-clock"></i> Duration: 2 Weeks</li>
+                                <li><i class="fas fa-user-graduate"></i> Certificate: Certification</li>
+                                <li><i class="fas fa-users"></i> Format: Farm Audit Included</li>
+                                <li><i class="fas fa-map-marker-alt"></i> Location: On-site</li>
+                            </ul>
+                            <div class="course-price">₦65,000</div>
+                            <a href="#" class="btn">Enroll Now</a>
+                        </div>
+                    </div>
+                    
+                    <div class="course-card">
+                        <div class="course-header">
+                            <h4>Poultry Skills Acquisition</h4>
+                            <p class="course-date"><i class="far fa-calendar-alt"></i> Next intake: June 10, 2025</p>
+                        </div>
+                        <div class="course-content">
+                            <p>Develop practical skills for successful poultry operations and management.</p>
+                            <ul class="course-details">
+                                <li><i class="far fa-clock"></i> Duration: 5 Weeks</li>
+                                <li><i class="fas fa-user-graduate"></i> Certificate: Advanced Diploma</li>
+                                <li><i class="fas fa-users"></i> Format: Executive Level</li>
+                                <li><i class="fas fa-map-marker-alt"></i> Location: On-site</li>
+                            </ul>
+                            <div class="course-price">₦150,000</div>
+                            <a href="#" class="btn">Enroll Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="faq-category" data-category="services">
+                <div class="category-header">
+                    <div class="category-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <div class="category-title">
+                        <h3>Our Services</h3>
+                        <p>Information about the services we provide</p>
+                    </div>
+                </div>
+                
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h4>What types of services do you offer?</h4>
+                            <div class="faq-toggle">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="faq-answer">
+                            <p>We offer a comprehensive range of agricultural services:</p>
+                            <ul>
+                                <li><strong>Agricultural Services:</strong> Poultry & livestock training, mechanized farming, fertilizer production</li>
+                                <li><strong>Consultancy & Training:</strong> Agricultural consultancy, skills acquisition, seminars & workshops</li>
+                                <li><strong>Commercial & Trading:</strong> Supply of raw materials, agricultural equipment dealership</li>
+                                <li><strong>Industrial & Manufacturing:</strong> Production of agricultural machines</li>
+                                <li><strong>Transport & Logistics:</strong> Transport services, logistics, vehicle hiring</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h4>Do you provide customized services for businesses?</h4>
+                            <div class="faq-toggle">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes, we offer customized services tailored to the specific needs of businesses, including:</p>
+                            <ul>
+                                <li>Custom training programs for staff</li>
+                                <li>Consultancy services for farm setup and optimization</li>
+                                <li>Supply chain management solutions</li>
+                                <li>Equipment procurement and maintenance services</li>
+                                <li>Business development and market access support</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h4>How can I request your services?</h4>
+                            <div class="faq-toggle">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="faq-answer">
+                            <p>You can request our services through multiple channels:</p>
+                            <ul>
+                                <li>Call our service hotline: 08055057189, 090369646693</li>
+                                <li>Email us at: Kaizenacademy@gmail.com</li>
+                                <li>Visit our office during business hours</li>
+                                <li>Fill out the service request form on our website</li>
+                                <li>Contact us through our social media channels</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="faq-category" data-category="location">
+                <div class="category-header">
+                    <div class="category-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="category-title">
+                        <h3>Location & Facilities</h3>
+                        <p>Information about our academy location and facilities</p>
+                    </div>
+                </div>
+                
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h4>Where is the academy located?</h4>
+                            <div class="faq-toggle">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Our main campus is located at:</p>
+                            <p><strong>Block 5, Flat 3, Dutsinma Close. Area 1, Section 2, Garki, Abuja.</strong></p>
+                            <p>We also have training centers in multiple locations across the country to serve students from different regions.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h4>What facilities are available at your academy?</h4>
+                            <div class="faq-toggle">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Our academy is equipped with state-of-the-art facilities including:</p>
+                            <ul>
+                                <li>Modern classrooms with audio-visual equipment</li>
+                                <li>Practical training farms and demonstration plots</li>
+                                <li>Laboratories for soil and feed analysis</li>
+                                <li>Library with agricultural resources</li>
+                                <li>Computer lab with internet access</li>
+                                <li>Conference and seminar halls</li>
+                                <li>Cafeteria and recreational areas</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h4>What are your operating hours?</h4>
+                            <div class="faq-toggle">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Our standard operating hours are:</p>
+                            <ul>
+                                <li><strong>Monday - Friday:</strong> 9:00 AM - 6:00 PM</li>
+                                <li><strong>Saturday:</strong> 10:00 AM - 4:00 PM</li>
+                                <li><strong>Sunday:</strong> Closed</li>
+                            </ul>
+                            <p>Note: Some training programs and services may have different schedules. Please contact us for specific program timings.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="location-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Location</h2>
+                <p>Visit our academy or get in touch with us</p>
+            </div>
+            
+            <div class="location-container">
+                <div class="location-info">
+                    <h3>Kaizen Poultry Skills Academy</h3>
+                    <ul class="location-details">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Block 5, Flat 3, Dutsinma Close. Area 1, Section 2, Garki, Abuja.</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>08055057189, 090369646693</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>Kaizenacademy@gmail.com</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-clock"></i>
+                            <span>Mon-Fri: 9AM - 6PM | Sat: 10AM - 4PM</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-car"></i>
+                            <span>Ample parking space available</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-wheelchair"></i>
+                            <span>Wheelchair accessible facilities</span>
+                        </li>
+                    </ul>
+                    <a href="#" class="btn">Get Directions</a>
+                </div>
+                
+                <div class="location-map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3940.412193824884!2d7.486050774928699!3d9.03208109104307!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x104e0be9c0d7e7c1%3A0x1b7e8e5e5a5a5a5a!2sBlock%205%2C%20Flat%203%2C%20Dutsinma%20Close%2C%20Area%201%2C%20Section%202%2C%20Garki%2C%20Abuja%2C%20Nigeria!5e0!3m2!1sen!2sng!4v1641234567890!5m2!1sen!2sng" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <h2>Still Have Questions?</h2>
+            <p>Contact us directly and our team will be happy to assist you</p>
+            <a href="#" class="btn">Contact Us</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="waves">
+            <div class="wave wave1"></div>
+            <div class="wave wave2"></div>
+            <div class="wave wave3"></div>
+        </div>
+        
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-grid">
+                 <div class="footer-column">
+                        <h3>Kaizen Poultry Skills Academy</h3>
+                        <p>Providing innovative poultry training, consulting, and business solutions to help organizations thrive in the agricultural industry.</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h3>Quick Links</h3>
+                        <ul class="footer-links">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="training.html">Training Programs</a></li>
+                            <li><a href="courseinformation.html">Course Information</a></li>
+                            <li><a href="services.html">Services</a></li>
+                            <li><a href="frequentlyasked.html">FAQ</a></li>
+                            <li><a href="partners.html">Partners</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h3>Services</h3>
+                        <ul class="footer-links">
+                            <li><a href="#">Agricultural Services</a></li>
+                            <li><a href="#">Consultancy & Training Services</a></li>
+                            <li><a href="#">Commercial & Trading Services</a></li>
+                            <li><a href="#">Industrial & Manufacturing Services</a></li>
+                            <li><a href="#">Transport & Logistics Services</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h3>Contact Info</h3>
+                        <ul class="footer-links">
+                            <li><i class="fas fa-map-marker-alt"></i> Block 5, Flat 3, Dutsinma Close. Area 1, Section 2, Garki, Abuja.</li>
+                             <li><i class="fas fa-phone"></i> 08055057189, 090369646693</li>
+                            <li><i class="fas fa-envelope"></i> Kaizenacademy@gmail.com</li>
+                            <li><i class="fas fa-clock"></i> Mon-Fri: 9AM - 6PM</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© 2025 Kaizen Poultry Skills Academy Limited. All Rights Reserved.</p>
+            </div>
+        </div>         
+    </footer>
+
+    <script>
+        // Background image loading check
+        document.addEventListener('DOMContentLoaded', function() {
+            const heroSection = document.getElementById('faq-hero');
+            const bgImage = new Image();
+            
+            // Set the same image URL as in CSS
+            bgImage.src = 'https://images.unsplash.com/photo-1589923189623-12dac119a3c9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80';
+            
+            bgImage.onload = function() {
+                console.log('Hero background image loaded successfully');
+            };
+            
+            bgImage.onerror = function() {
+                console.log('Hero background image failed to load, using fallback');
+                heroSection.classList.add('fallback-bg');
+            };
+
+            // Menu functionality
+            const hamburger = document.querySelector('.hamburger');
+            const navMenu = document.querySelector('.nav-menu');
+            
+            if (hamburger && navMenu) {
+                hamburger.addEventListener('click', function() {
+                    navMenu.classList.toggle('active');
+                    hamburger.classList.toggle('active');
+                    
+                    // Only manage body overflow if the hamburger is visible (i.e., not in the landscape mobile view we created)
+                    if (window.getComputedStyle(hamburger).display !== 'none') {
+                        if (navMenu.classList.contains('active')) {
+                            document.body.style.overflow = 'hidden';
+                        } else {
+                            document.body.style.overflow = 'auto';
+                        }
+                    } else {
+                         document.body.style.overflow = 'auto';
+                    }
+                });
+                
+                document.querySelectorAll('.nav-link').forEach(link => {
+                    link.addEventListener('click', function() {
+                        navMenu.classList.remove('active');
+                        hamburger.classList.remove('active');
+                        document.body.style.overflow = 'auto';
+                    });
+                });
+            }
+
+            // FAQ Toggle Functionality
+            document.querySelectorAll('.faq-question').forEach(question => {
+                question.addEventListener('click', () => {
+                    const faqItem = question.parentElement;
+                    faqItem.classList.toggle('active');
+                });
+            });
+
+            // Search and Filter Functionality
+            const searchInput = document.getElementById('search-input');
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const faqCategories = document.querySelectorAll('.faq-category');
+            const faqItems = document.querySelectorAll('.faq-item');
+            const courseCards = document.querySelectorAll('.course-card');
+
+            // Filter by category
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    // Add active class to clicked button
+                    button.classList.add('active');
+                    
+                    const filter = button.getAttribute('data-filter');
+                    
+                    faqCategories.forEach(category => {
+                        if (filter === 'all' || category.getAttribute('data-category') === filter) {
+                            category.style.display = 'block';
+                        } else {
+                            category.style.display = 'none';
+                        }
+                    });
+                });
+            });
+
+            // Search functionality
+            searchInput.addEventListener('input', () => {
+                const searchTerm = searchInput.value.toLowerCase().trim();
+                
+                if (searchTerm === '') {
+                    // Reset to default view if search is empty
+                    faqItems.forEach(item => {
+                        item.style.display = 'block';
+                        item.classList.remove('active');
+                    });
+                    
+                    courseCards.forEach(card => {
+                        card.style.display = 'block';
+                    });
+                    
+                    faqCategories.forEach(category => {
+                        category.style.display = 'block';
+                    });
+                    
+                    // Hide no results message if search is cleared
+                    const noResults = document.querySelector('.no-results');
+                    if (noResults) {
+                        noResults.style.display = 'none';
+                    }
+                    
+                    return;
+                }
+                
+                let hasResults = false;
+                
+                // Search through FAQ items
+                faqItems.forEach(item => {
+                    const question = item.querySelector('.faq-question h4').textContent.toLowerCase();
+                    const answer = item.querySelector('.faq-answer').textContent.toLowerCase();
+                    
+                    if (question.includes(searchTerm) || answer.includes(searchTerm)) {
+                        item.style.display = 'block';
+                        // Expand the item if it contains the search term
+                        if (!item.classList.contains('active')) {
+                            item.classList.add('active');
+                        }
+                        hasResults = true;
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+                
+                // Search through course cards
+                courseCards.forEach(card => {
+                    const title = card.querySelector('.course-header h4').textContent.toLowerCase();
+                    const description = card.querySelector('.course-content p').textContent.toLowerCase();
+                    const details = card.querySelector('.course-details').textContent.toLowerCase();
+                    
+                    if (title.includes(searchTerm) || description.includes(searchTerm) || details.includes(searchTerm)) {
+                        card.style.display = 'block';
+                        hasResults = true;
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+                
+                // Show/hide categories based on visible items
+                faqCategories.forEach(category => {
+                    const visibleItems = category.querySelectorAll('.faq-item[style*="display: block"], .course-card[style*="display: block"]');
+                    if (visibleItems.length > 0) {
+                        category.style.display = 'block';
+                    } else {
+                        category.style.display = 'none';
+                    }
+                });
+                
+                // Show no results message if no matches found
+                let noResults = document.querySelector('.no-results');
+                if (!hasResults) {
+                    if (!noResults) {
+                        noResults = document.createElement('div');
+                        noResults.className = 'no-results';
+                        noResults.innerHTML = '<p>No results found for "' + searchTerm + '". Please try different keywords.</p>';
+                        document.querySelector('.faq-section .container').appendChild(noResults);
+                    } 
+                    noResults.style.display = 'block';
+                } else {
+                    // Hide no results message if there are results
+                    if (noResults) {
+                        noResults.style.display = 'none';
+                    }
+                }
+            });
+
+            // Simple animation for FAQ items when they come into view
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            // Observe FAQ items
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(20px)';
+                item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                observer.observe(item);
+            });
+            
+            // Observe course cards
+            document.querySelectorAll('.course-card').forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                observer.observe(card);
+            });
+            
+            // Add a resize listener to reset menu state if screen changes
+            window.addEventListener('resize', function() {
+                // If screen is wide enough to display desktop menu, ensure mobile state is reset
+                if (window.innerWidth > 992) {
+                    navMenu.classList.remove('active');
+                    hamburger.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

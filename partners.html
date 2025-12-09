@@ -1,0 +1,1254 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Partners | Kaizen Poultry Skills Academy</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary: #1a5f2a; /* Dark green */
+            --primary-dark: #0f4d1f; /* Darker green */
+            --primary-light: #2ecc71; /* Bright green */
+            --secondary: #f39c12; /* Orange accent */
+            --light: #f8f9fa;
+            --dark: #343a40;
+            --text: #333;
+            --success: #27ae60; /* Green success */
+            --green-light: #d4efdf; /* Light green for backgrounds */
+        }
+
+        body {
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-color: #f9f9f9;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: var(--primary);
+            color: white;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        /* Logo Responsiveness - First Approach */
+        .logo {
+            display: flex;
+            align-items: center;
+            transition: all 0.3s ease;
+            width: 100px;
+        }
+
+        .logo img {
+            transition: all 0.3s ease;
+        }
+
+        /* Default logo size for larger screens */
+        .logo img {
+            width: ;
+        }
+
+        /* Progressive logo sizing for different screen sizes */
+        @media (max-width: 1200px) {
+            .logo img {
+                width: 100px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .logo img {
+                width: 15%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .logo img {
+                width: 20%;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .logo img {
+                width: 25%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo img {
+                width: 30%;
+                min-width: 120px; /* Prevents logo from becoming too small */
+            }
+        }
+
+        @media (max-width: 360px) {
+            .logo img {
+                width: 35%;
+                min-width: 100px;
+            }
+        }
+
+        /* For very small screens */
+        @media (max-width: 320px) {
+            .logo img {
+                width: 40%;
+                min-width: 90px;
+            }
+        }
+
+        .logo i {
+            margin-right: 10px;
+            color: var(--primary-light);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-item {
+            position: relative;
+            margin-left: 20px;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 10px 15px;
+            display: flex;
+            align-items: center;
+            transition: all 0.3s ease;
+            border-radius: 4px;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--primary-light);
+        }
+
+        .nav-link i {
+            margin-left: 5px;
+            font-size: 0.8rem;
+        }
+
+        .dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: white;
+            min-width: 220px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 4px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+            z-index: 100;
+        }
+
+        .dropdown-item {
+            display: block;
+            padding: 12px 20px;
+            color: var(--text);
+            text-decoration: none;
+            border-bottom: 1px solid #f1f1f1;
+            transition: all 0.2s ease;
+        }
+
+        .dropdown-item:hover {
+            background-color: #f9f9f9;
+            color: var(--primary);
+            padding-left: 25px;
+        }
+
+        .nav-item:hover .dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+
+        /* Page Header with Fade-in Animation */
+        .page-header {
+            background: linear-gradient(rgba(26, 95, 42, 0.85), rgba(15, 77, 31, 0.85)), 
+                        url('https://images.unsplash.com/photo-1548550023-2bdb3c5beed7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: white;
+            padding: 150px 0 80px;
+            text-align: center;
+            margin-top: 70px;
+            position: relative;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1.2s ease-out forwards;
+            animation-delay: 0.5s;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1.2s ease-out forwards;
+            animation-delay: 0.8s;
+        }
+
+        .breadcrumb {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            font-size: 0.9rem;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1.2s ease-out forwards;
+            animation-delay: 1.1s;
+        }
+
+        .breadcrumb a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .breadcrumb a:hover {
+            color: var(--secondary);
+        }
+
+        .breadcrumb span {
+            margin: 0 10px;
+        }
+
+        /* Fade In Up Animation */
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Partners Intro */
+        .partners-intro {
+            padding: 80px 0;
+            background-color: white;
+            text-align: center;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .section-title p {
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .intro-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .intro-content p {
+            color: #666;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-light);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(46, 204, 113, 0.3);
+        }
+
+        .btn:hover {
+            background-color: #27ae60;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(46, 204, 113, 0.4);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary-light);
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-light);
+            color: white;
+        }
+
+        /* Partners Showcase */
+        .partners-showcase {
+            padding: 80px 0;
+            background-color: var(--green-light);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .partners-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .partner-card {
+            background-color: white;
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .partner-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(26, 95, 42, 0.1), transparent);
+            transform: rotate(45deg);
+            transition: all 0.6s ease;
+            opacity: 0;
+        }
+
+        .partner-card:hover::before {
+            opacity: 1;
+            animation: shine 1.5s;
+        }
+
+        @keyframes shine {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+
+        .partner-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .partner-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: 0 auto 25px;
+            overflow: hidden;
+            border: 5px solid #f1f1f1;
+            transition: all 0.4s ease;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .partner-card:hover .partner-image {
+            transform: scale(1.1);
+            border-color: var(--primary);
+        }
+
+        .partner-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .partner-card:hover .partner-image img {
+            transform: scale(1.1);
+        }
+
+        .partner-card h3 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+            transition: color 0.3s ease;
+        }
+
+        .partner-card:hover h3 {
+            color: var(--primary-dark);
+        }
+
+        .partner-card p {
+            color: #666;
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+
+        .partner-tags {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .partner-tag {
+            background-color: rgba(26, 95, 42, 0.1);
+            color: var(--primary);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .partner-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .partner-link i {
+            margin-left: 5px;
+            transition: transform 0.3s ease;
+        }
+
+        .partner-link:hover {
+            color: var(--primary-dark);
+        }
+
+        .partner-link:hover i {
+            transform: translateX(5px);
+        }
+
+        /* Partnership Benefits */
+        .partnership-benefits {
+            padding: 80px 0;
+            background-color: white;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .benefit-card {
+            background-color: #f9f9f9;
+            padding: 40px 30px;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .benefit-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background-color: var(--primary);
+            transition: width 0.3s ease;
+        }
+
+        .benefit-card:hover::before {
+            width: 100%;
+            opacity: 0.1;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .benefit-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .benefit-card:hover .benefit-icon {
+            transform: scale(1.1);
+            color: var(--primary-dark);
+        }
+
+        .benefit-card h3 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .benefit-card p {
+            color: #666;
+        }
+
+        /* Partnership CTA */
+        .partnership-cta {
+            padding: 100px 0;
+            background: linear-gradient(rgba(26, 95, 42, 0.9), rgba(15, 77, 31, 0.9)), 
+                        url('https://images.unsplash.com/photo-1548550023-2bdb3c5beed7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .partnership-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="0.1" d="M0,96L48,112C96,128,192,160,288,186.7C384,213,480,235,576,213.3C672,192,768,128,864,128C960,128,1056,192,1152,192C1248,192,1344,128,1392,96L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.1;
+        }
+
+        .partnership-cta .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .partnership-cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .partnership-cta p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn-light {
+            background-color: white;
+            color: var(--primary);
+        }
+
+        .btn-light:hover {
+            background-color: #f1f1f1;
+            color: var(--primary);
+        }
+
+        /* Footer - Updated with Green Colors */
+        footer {
+            background-color: var(--primary-dark);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .footer-content {
+            padding: 80px 0 40px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 40px;
+            height: 3px;
+            background-color: var(--primary-light);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #e0e0e0;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-light);
+            padding-left: 5px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background-color: var(--primary-light);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding: 20px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: #c8e6c9;
+        }
+
+        /* Wave Animation - Updated with Green Colors */
+        .waves {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 15vh;
+            min-height: 100px;
+            max-height: 150px;
+        }
+
+        .wave {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" fill="%23ffffff"></path></svg>');
+            background-size: 1200px 100px;
+        }
+
+        .wave1 {
+            animation: wave 30s linear infinite;
+            opacity: 0.7;
+        }
+
+        .wave2 {
+            animation: wave 15s linear infinite reverse;
+            opacity: 0.5;
+        }
+
+        .wave3 {
+            animation: wave 10s linear infinite;
+            opacity: 0.3;
+        }
+
+        @keyframes wave {
+            0% {
+                background-position-x: 0;
+            }
+            100% {
+                background-position-x: 1200px;
+            }
+        }
+
+        /* Floating Animation */
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .floating-delay-1 {
+            animation-delay: 0.5s;
+        }
+
+        .floating-delay-2 {
+            animation-delay: 1s;
+        }
+
+        .floating-delay-3 {
+            animation-delay: 1.5s;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 70px;
+                flex-direction: column;
+                background-color: var(--primary);
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+                padding: 20px 0;
+                z-index: 999;
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .nav-item {
+                margin: 15px 0;
+            }
+
+            .dropdown {
+                position: static;
+                opacity: 1;
+                visibility: visible;
+                transform: none;
+                box-shadow: none;
+                background-color: rgba(0, 0, 0, 0.1);
+                width: 80%;
+                margin: 10px auto 0;
+                display: none;
+            }
+
+            .nav-item:hover .dropdown {
+                display: block;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+
+            .partners-grid {
+                grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .page-header {
+                padding: 120px 0 60px;
+            }
+
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .page-header p {
+                font-size: 1rem;
+            }
+
+            .partners-intro {
+                padding: 60px 0;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+
+            .partners-showcase {
+                padding: 60px 0;
+            }
+
+            .partnership-benefits {
+                padding: 60px 0;
+            }
+
+            .partnership-cta {
+                padding: 80px 0;
+            }
+
+            .partnership-cta h2 {
+                font-size: 2rem;
+            }
+        }
+
+        /* Landscape orientation for mobile - NEW */
+        @media (max-height: 500px) and (orientation: landscape) {
+            .hamburger {
+                display: none !important;
+            }
+            
+            .nav-menu {
+                position: static !important;
+                flex-direction: row !important;
+                padding: 0 !important;
+                left: 0 !important;
+                background-color: transparent !important;
+                box-shadow: none !important;
+            }
+            
+            .nav-item {
+                margin: 0 10px !important;
+            }
+            
+            .dropdown {
+                position: absolute !important;
+                background-color: white !important;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1) !important;
+                width: auto !important;
+                margin: 0 !important;
+                display: block !important;
+                opacity: 0 !important;
+                visibility: hidden !important;
+                transform: translateY(10px) !important;
+            }
+            
+            .nav-item:hover .dropdown {
+                opacity: 1 !important;
+                visibility: visible !important;
+                transform: translateY(0) !important;
+            }
+            
+            .page-header {
+                padding: 100px 0 50px !important;
+                margin-top: 60px !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                  <img src="kaizen-logo.png" width="10%" height="auto" class="logo" alt="Nakhat Spices Logo">                  
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="about.html" class="nav-link">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="training.html" class="nav-link">Training </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="courseinformation.html" class="nav-link">Course Info</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="services.html" class="nav-link">Servcies</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="frequentlyasked.html" class="nav-link">FAQ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="partners.html" class="nav-link active">Partners</a>
+                    </li>
+                </ul>
+                
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Our Valued Partners</h1>
+            <p>Collaborating with industry leaders to advance poultry farming excellence</p>
+            <div class="breadcrumb">
+                <a href="index.html">Home</a>
+                <span>/</span>
+                <a href="partners.html">Partners</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners Intro -->
+    <section class="partners-intro">
+        <div class="container">
+            <div class="section-title">
+                <h2>Strategic Partnerships</h2>
+                <p>Building strong relationships with industry leaders to drive mutual success</p>
+            </div>
+            <div class="intro-content">
+                <p>At Kaizen Poultry Academy, we believe that collaboration is key to advancing the poultry farming industry. Our strategic partnerships with leading companies across the agricultural sector enable us to deliver comprehensive training and exceptional value to our students.</p>
+                <p>Through these collaborations, we combine expertise, resources, and technologies to create transformative educational experiences that drive success in today's competitive agricultural landscape.</p>
+                <a href="contact.html" class="btn">Become a Partner</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners Showcase -->
+    <section class="partners-showcase">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Partner Network</h2>
+                <p>Meet the innovative companies we collaborate with</p>
+            </div>
+            
+            <div class="partners-grid">
+                <!-- Partner 1 -->
+                <div class="partner-card floating">
+                    <div class="partner-image">
+                        <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="PoultryTech">
+                    </div>
+                    <h3>PoultryTech Solutions</h3>
+                    <p>Leading provider of cutting-edge poultry farming technology and automation systems.</p>
+                    <div class="partner-tags">
+                        <span class="partner-tag">Technology</span>
+                        <span class="partner-tag">Automation</span>
+                    </div>
+                    <a href="#" class="partner-link">Visit Website <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <!-- Partner 2 -->
+                <div class="partner-card floating floating-delay-1">
+                    <div class="partner-image">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="AgriFeed">
+                    </div>
+                    <h3>AgriFeed International</h3>
+                    <p>Premium animal nutrition company specializing in poultry feed formulations.</p>
+                    <div class="partner-tags">
+                        <span class="partner-tag">Nutrition</span>
+                        <span class="partner-tag">Feed</span>
+                    </div>
+                    <a href="#" class="partner-link">Visit Website <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <!-- Partner 3 -->
+                <div class="partner-card floating floating-delay-2">
+                    <div class="partner-image">
+                        <img src="https://images.unsplash.com/photo-1559028012-481c04fa702d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="FarmHealth">
+                    </div>
+                    <h3>FarmHealth Laboratories</h3>
+                    <p>Veterinary diagnostics and poultry health management specialists.</p>
+                    <div class="partner-tags">
+                        <span class="partner-tag">Health</span>
+                        <span class="partner-tag">Diagnostics</span>
+                    </div>
+                    <a href="#" class="partner-link">Visit Website <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <!-- Partner 4 -->
+                <div class="partner-card floating floating-delay-3">
+                    <div class="partner-image">
+                        <img src="https://images.unsplash.com/photo-1551836026-d5c8c2a6cee8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="EcoPoultry">
+                    </div>
+                    <h3>EcoPoultry Systems</h3>
+                    <p>Sustainable poultry housing and environmental management solutions.</p>
+                    <div class="partner-tags">
+                        <span class="partner-tag">Sustainability</span>
+                        <span class="partner-tag">Housing</span>
+                    </div>
+                    <a href="#" class="partner-link">Visit Website <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <!-- Partner 5 -->
+                <div class="partner-card floating">
+                    <div class="partner-image">
+                        <img src="https://images.unsplash.com/photo-1565688534245-05d6b5be184a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="PoultryGenetics">
+                    </div>
+                    <h3>PoultryGenetics Inc.</h3>
+                    <p>Leading breeder and genetics company for improved poultry strains.</p>
+                    <div class="partner-tags">
+                        <span class="partner-tag">Genetics</span>
+                        <span class="partner-tag">Breeding</span>
+                    </div>
+                    <a href="#" class="partner-link">Visit Website <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <!-- Partner 6 -->
+                <div class="partner-card floating floating-delay-1">
+                    <div class="partner-image">
+                        <img src="https://images.unsplash.com/photo-1559028012-481c04fa702d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="AgriFinance">
+                    </div>
+                    <h3>AgriFinance Partners</h3>
+                    <p>Specialized financial services for poultry farming operations and expansion.</p>
+                    <div class="partner-tags">
+                        <span class="partner-tag">Finance</span>
+                        <span class="partner-tag">Investment</span>
+                    </div>
+                    <a href="#" class="partner-link">Visit Website <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partnership Benefits -->
+    <section class="partnership-benefits">
+        <div class="container">
+            <div class="section-title">
+                <h2>Partnership Benefits</h2>
+                <p>Discover the advantages of collaborating with Kaizen Poultry Academy</p>
+            </div>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Industry Exposure</h3>
+                    <p>Gain visibility among thousands of poultry farmers and industry professionals through our training programs.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Network Access</h3>
+                    <p>Connect with our extensive network of poultry farmers, suppliers, and industry experts.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Innovation Showcase</h3>
+                    <p>Demonstrate your latest products and technologies to a targeted audience of potential customers.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Business Growth</h3>
+                    <p>Access new markets and create revenue opportunities through joint ventures and referral programs.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Knowledge Exchange</h3>
+                    <p>Share expertise and best practices through workshops, training sessions, and collaborative research.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3>Enhanced Credibility</h3>
+                    <p>Strengthen your brand reputation through association with a leading poultry training institution.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partnership CTA -->
+    <section class="partnership-cta">
+        <div class="container">
+            <h2>Ready to Become a Partner?</h2>
+            <p>Join our network of industry leaders and unlock new opportunities for growth and innovation in poultry farming.</p>
+            <a href="contact.html" class="btn btn-light">Start Partnership Discussion</a>
+        </div>
+    </section>
+
+    <!-- Footer with Green Colors -->
+    <footer>
+        <div class="waves">
+            <div class="wave wave1"></div>
+            <div class="wave wave2"></div>
+            <div class="wave wave3"></div>
+        </div>
+        
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-grid">
+                            <div class="footer-column">
+                        <h3>Kaizen Poultry Skills Academy</h3>
+                        <p>Providing innovative poultry training, consulting, and business solutions to help organizations thrive in the agricultural industry.</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h3>Quick Links</h3>
+                        <ul class="footer-links">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="training.html">Training Programs</a></li>
+                            <li><a href="courseinformation.html">Corse information </a></li>
+                            <li><a href="services.html">Services</a></li>
+                            <li><a href="frequentlyasked.html">FAQ</a></li>
+                            <li><a href="partners.html">Partners</a></li>
+
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h3>Services</h3>
+                        <ul class="footer-links">
+                            <li><a href="#">Agricultural Services</a></li>
+                            <li><a href="#">Consultancy & Training Services</a></li>
+                            <li><a href="#">Commercial & Trading Services</a></li>
+                            <li><a href="#">Industrial & Mnufacturing Services</a></li>
+                            <li><a href="#">Transport & Logistics Services</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h3>Contact Info</h3>
+                        <ul class="footer-links">
+                            <li><i class="fas fa-map-marker-alt"></i>Block 5, Flat 3,Dutsinma Close.Area 1,Section 2,Garki,Abuja.</li>
+                             <li><i class="fas fa-phone"></i> 08055057189, 090369646693.</li>
+                            <li><i class="fas fa-envelope"></i> Kaizenacademy@gmail.com</li>
+                            <li><i class="fas fa-clock"></i> Mon-Fri: 9AM - 6PM</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Kaizen Poultry Skills Academy Limited. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Toggle menu functionality
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Close menu when clicking on a link
+        document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+        }));
+
+        // Dropdown functionality for mobile
+        document.querySelectorAll('.nav-item').forEach(item => {
+            if (window.innerWidth <= 992) {
+                item.addEventListener('click', function(e) {
+                    if (this.querySelector('.dropdown')) {
+                        e.preventDefault();
+                        const dropdown = this.querySelector('.dropdown');
+                        dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+                    }
+                });
+            }
+        });
+
+        // Adjust dropdown display on window resize
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 992) {
+                document.querySelectorAll('.dropdown').forEach(dropdown => {
+                    dropdown.style.display = '';
+                });
+            }
+        });
+
+        // Add floating animation to partner cards on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const partnerCards = document.querySelectorAll('.partner-card');
+            
+            // Add scroll animation
+            function checkScroll() {
+                partnerCards.forEach(card => {
+                    const cardTop = card.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+                    
+                    if (cardTop < windowHeight - 100) {
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0)';
+                    }
+                });
+            }
+            
+            // Initialize cards with opacity 0 for animation
+            partnerCards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            });
+            
+            // Check scroll position on load and scroll
+            window.addEventListener('scroll', checkScroll);
+            checkScroll(); // Initial check
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,1672 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services | Kaizen Poultry Skills Academy</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary: #1a472a;
+            --secondary: #2e7d32;
+            --accent: #4caf50;
+            --light: #e8f5e9;
+            --dark: #1b5e20;
+            --text: #333;
+            --gray: #666;
+            --light-gray: #f5f5f5;
+            --white: #fff;
+        }
+
+        body {
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: var(--primary);
+            color: white;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+         /* Logo Responsiveness - First Approach */
+        .logo {
+            display: flex;
+            align-items: center;
+            transition: all 0.3s ease;
+            width: 100px;
+        }
+
+        .logo img {
+            transition: all 0.3s ease;
+        }
+
+        /* Default logo size for larger screens */
+        .logo img {
+            width: ;
+        }
+
+        /* Progressive logo sizing for different screen sizes */
+        @media (max-width: 1200px) {
+            .logo img {
+                width: 100px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .logo img {
+                width: 15%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .logo img {
+                width: 20%;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .logo img {
+                width: 25%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo img {
+                width: 30%;
+                min-width: 120px; /* Prevents logo from becoming too small */
+            }
+        }
+
+        @media (max-width: 360px) {
+            .logo img {
+                width: 35%;
+                min-width: 100px;
+            }
+        }
+
+        /* For very small screens */
+        @media (max-width: 320px) {
+            .logo img {
+                width: 40%;
+                min-width: 90px;
+            }
+        }
+        .logo i {
+            margin-right: 10px;
+            color: var(--accent);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-item {
+            position: relative;
+            margin-left: 20px;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 10px 15px;
+            display: flex;
+            align-items: center;
+            transition: all 0.3s ease;
+            border-radius: 4px;
+        }
+
+        .nav-link:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--accent);
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+
+        /* Hero Section - Fixed Image */
+        .services-hero {
+            position: relative;
+            height: 85vh;
+            min-height: 600px;
+            margin-top: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background-color: var(--primary); /* Fallback color */
+        }
+
+        .hero-background::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                to bottom,
+                rgba(26, 71, 42, 0.7) 0%,
+                rgba(46, 125, 50, 0.6) 50%,
+                rgba(76, 175, 80, 0.4) 100%
+            );
+            z-index: 1;
+        }
+
+        .hero-background img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: white;
+            max-width: 800px;
+            padding: 0 20px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+            line-height: 1.2;
+        }
+
+        .hero-content p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+            line-height: 1.6;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            padding: 14px 35px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn:hover {
+            background-color: var(--dark);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Services Section */
+        .services {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: -10px;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background-color: var(--secondary);
+        }
+
+        .section-title p {
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            border-top: 4px solid var(--accent);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-image {
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+            background-color: #f5f5f5;
+        }
+
+        .service-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .service-image img.loaded {
+            opacity: 1;
+        }
+
+        .service-card:hover .service-image img {
+            transform: scale(1.05);
+        }
+
+        .service-content {
+            padding: 30px;
+        }
+
+        .service-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        .service-content p {
+            color: var(--gray);
+            margin-bottom: 20px;
+        }
+
+        .service-features {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+
+        .service-features li {
+            padding: 8px 0;
+            border-bottom: 1px solid #f1f1f1;
+            display: flex;
+            align-items: center;
+        }
+
+        .service-features li:last-child {
+            border-bottom: none;
+        }
+
+        .service-features li i {
+            color: var(--accent);
+            margin-right: 10px;
+            font-size: 0.9rem;
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--accent);
+            color: var(--accent);
+            padding: 10px 25px;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--accent);
+            color: white;
+        }
+
+        /* Service Categories */
+        .service-category {
+            margin-bottom: 60px;
+        }
+
+        .category-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--light);
+        }
+
+        .category-icon {
+            width: 60px;
+            height: 60px;
+            background-color: var(--light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            color: var(--primary);
+            font-size: 1.5rem;
+        }
+
+        .category-title h3 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+
+        .category-title p {
+            color: var(--gray);
+        }
+
+        /* Process Section */
+        .process {
+            padding: 80px 0;
+            background-color: var(--light);
+        }
+
+        .process-steps {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            margin-top: 50px;
+        }
+
+        .process-steps::before {
+            content: '';
+            position: absolute;
+            top: 60px;
+            left: 10%;
+            right: 10%;
+            height: 3px;
+            background-color: var(--accent);
+            z-index: 1;
+        }
+
+        .process-step {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            flex: 1;
+            max-width: 200px;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background-color: var(--accent);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0 auto 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .step-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+
+        .step-content p {
+            color: var(--gray);
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background-color: var(--light);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 4rem;
+            color: var(--accent);
+            opacity: 0.2;
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
+
+        .testimonial-content {
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 15px;
+            background-color: var(--secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        .author-info h4 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            color: var(--primary);
+        }
+
+        .author-info p {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        /* CTA Section */
+        .cta {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .cta p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .footer-content {
+            padding: 80px 0 40px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 40px;
+            height: 3px;
+            background-color: var(--accent);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+            padding-left: 5px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background-color: var(--accent);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding: 20px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+
+        /* Wave Animation */
+        .waves {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 15vh;
+            min-height: 100px;
+            max-height: 150px;
+        }
+
+        .wave {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" fill="%23ffffff"></path></svg>');
+            background-size: 1200px 100px;
+        }
+
+        .wave1 {
+            animation: wave 30s linear infinite;
+            opacity: 0.7;
+        }
+
+        .wave2 {
+            animation: wave 15s linear infinite reverse;
+            opacity: 0.5;
+        }
+
+        .wave3 {
+            animation: wave 10s linear infinite;
+            opacity: 0.3;
+        }
+
+        @keyframes wave {
+            0% {
+                background-position-x: 0;
+            }
+            100% {
+                background-position-x: 1200px;
+            }
+        }
+
+        /* Loading Animation */
+        .loading {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .loading::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            animation: loading 1.5s infinite;
+        }
+
+        @keyframes loading {
+            0% {
+                transform: translateX(-100%);
+            }
+            100% {
+                transform: translateX(100%);
+            }
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 1200px) {
+            .hero-content h1 {
+                font-size: 3rem;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 70px;
+                flex-direction: column;
+                background-color: var(--primary);
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+                padding: 20px 0;
+                z-index: 999;
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .nav-item {
+                margin: 15px 0;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .services-hero {
+                height: 75vh;
+                min-height: 500px;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-content p {
+                font-size: 1.1rem;
+            }
+
+            .process-steps {
+                flex-direction: column;
+                align-items: center;
+                gap: 40px;
+            }
+
+            .process-steps::before {
+                display: none;
+            }
+
+            .process-step {
+                max-width: 100%;
+            }
+        }
+
+        /* Landscape Mode for Mobile - NEW */
+        @media (max-height: 500px) and (orientation: landscape) {
+            .hamburger {
+                display: none !important;
+            }
+            
+            .nav-menu {
+                position: static !important;
+                flex-direction: row !important;
+                background-color: transparent !important;
+                box-shadow: none !important;
+                padding: 0 !important;
+                width: auto !important;
+                height: auto !important;
+                display: flex !important;
+            }
+            
+            .nav-item {
+                margin: 0 10px !important;
+            }
+            
+            .nav-link {
+                padding: 8px 12px !important;
+                font-size: 0.9rem !important;
+            }
+            
+            .services-hero {
+                height: 90vh !important;
+                min-height: 400px !important;
+                padding: 80px 0 !important;
+            }
+            
+            .hero-content h1 {
+                font-size: 2.2rem !important;
+                margin-bottom: 15px !important;
+            }
+            
+            .hero-content p {
+                font-size: 1rem !important;
+                margin-bottom: 20px !important;
+            }
+            
+            .btn {
+                padding: 10px 25px !important;
+                font-size: 0.9rem !important;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .services-hero {
+                height: 65vh;
+                min-height: 450px;
+            }
+
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-content p {
+                font-size: 1rem;
+            }
+
+            .btn {
+                padding: 12px 30px;
+                font-size: 1rem;
+            }
+
+            .services {
+                padding: 60px 0;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+
+            .process {
+                padding: 60px 0;
+            }
+
+            .testimonials {
+                padding: 60px 0;
+            }
+
+            .cta {
+                padding: 60px 0;
+            }
+
+            .cta h2 {
+                font-size: 2rem;
+            }
+
+            .category-header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .category-icon {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .services-hero {
+                height: 60vh;
+                min-height: 400px;
+            }
+
+            .hero-content h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero-content p {
+                font-size: 0.95rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .service-content {
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .services-hero {
+                height: 55vh;
+                min-height: 350px;
+            }
+
+            .hero-content h1 {
+                font-size: 1.6rem;
+            }
+
+            .hero-content p {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                 <img src="kaizen-logo.png"  height="auto" class="logo" alt="Nakhat Spices Logo">  
+                
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="about.html" class="nav-link">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="training.html" class="nav-link">Training</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="courseinformation.html" class="nav-link">Course Info</a>
+                    </li>
+                      <li class="nav-item">
+                        <a href="frequentlyasked.html" class="nav-link">FAQ</a>
+                    </li>
+                      <li class="nav-item">
+                        <a href="partners.html" class="nav-link">Partners</a>
+                    </li>
+
+                </ul>
+                
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section - Fixed Image -->
+    <section class="services-hero">
+        <div class="hero-background">
+            <!-- Hero image is loaded immediately as it's above the fold -->
+            <img src="about.png" alt="Poultry Farming" loading="eager" id="hero-image">
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <h1>Our Professional Services</h1>
+                <p>Comprehensive agricultural training, consultancy, and business solutions to help your enterprise thrive in today's competitive market. We combine decades of industry experience with cutting-edge methodologies.</p>
+                <a href="#services" class="btn">Explore Our Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Services</h2>
+                <p>We offer a comprehensive range of specialized services designed to meet the diverse needs of agricultural businesses</p>
+            </div>
+            
+            <!-- Service Category 1: Agricultural Services -->
+            <div class="service-category">
+                <div class="category-header">
+                    <div class="category-icon">
+                        <i class="fas fa-tractor"></i>
+                    </div>
+                    <div class="category-title">
+                        <h3>Agricultural Services</h3>
+                        <p>Comprehensive farming and production solutions</p>
+                    </div>
+                </div>
+                
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-image">
+                            <img src="https://images.unsplash.com/photo-1596733430284-f7437764b1a9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Poultry and Livestock Training" loading="lazy">
+                        </div>
+                        <div class="service-content">
+                            <h3>Poultry & Livestock Training</h3>
+                            <p>Comprehensive training programs covering all aspects of modern poultry and livestock production.</p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check"></i> Broiler and layer management</li>
+                                <li><i class="fas fa-check"></i> Animal health and nutrition</li>
+                                <li><i class="fas fa-check"></i> Breeding and genetics</li>
+                                <li><i class="fas fa-check"></i> Farm management systems</li>
+                            </ul>
+                            <a href="#" class="btn btn-outline">Learn More</a>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-image">
+                            <img src="services-mechanised2.png" alt="Mechanized Farming" loading="lazy">
+                        </div>
+                        <div class="service-content">
+                            <h3>Mechanized Farming</h3>
+                            <p>Modern farming equipment and techniques to improve efficiency and productivity.</p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check"></i> Farm machinery operation</li>
+                                <li><i class="fas fa-check"></i> Precision agriculture</li>
+                                <li><i class="fas fa-check"></i> Irrigation systems</li>
+                                <li><i class="fas fa-check"></i> Equipment maintenance</li>
+                            </ul>
+                            <a href="#" class="btn btn-outline">Learn More</a>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-image">
+                            <img src="services-fertiliser-production.jpg" loading="lazy">
+                        </div>
+                        <div class="service-content">
+                            <h3>Fertilizer Production</h3>
+                            <p>Production and application of organic and inorganic fertilizers for optimal crop growth.</p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check"></i> Organic fertilizer manufacturing</li>
+                                <li><i class="fas fa-check"></i> Soil testing and analysis</li>
+                                <li><i class="fas fa-check"></i> Custom fertilizer blending</li>
+                                <li><i class="fas fa-check"></i> Application techniques</li>
+                            </ul>
+                            <a href="#" class="btn btn-outline">Learn More</a>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-image">
+                            <img src="img/services-processing-preserving.jpg" alt="Processing and Preservation" loading="lazy">
+                        </div>
+                        <div class="service-content">
+                            <h3>Processing & Preservation</h3>
+                            <p>Techniques for processing and preserving agricultural goods to extend shelf life and add value.</p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check"></i> Food processing methods</li>
+                                <li><i class="fas fa-check"></i> Preservation technologies</li>
+                                <li><i class="fas fa-check"></i> Packaging solutions</li>
+                                <li><i class="fas fa-check"></i> Quality control systems</li>
+                            </ul>
+                            <a href="#" class="btn btn-outline">Learn More</a>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-image">
+                            <img src="services-agro-allied.jpg" alt="Agro-Allied Operations" loading="lazy">
+                        </div>
+                        <div class="service-content">
+                            <h3>Agro-Allied Operations</h3>
+                            <p>Management and operation of facilities for agro-allied product processing and distribution.</p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check"></i> Facility management</li>
+                                <li><i class="fas fa-check"></i> Production optimization</li>
+                                <li><i class="fas fa-check"></i> Supply chain management</li>
+                                <li><i class="fas fa-check"></i> Quality assurance</li>
+                            </ul>
+                            <a href="#" class="btn btn-outline">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Service Category 2: Consultancy and Training Services -->
+            <div class="service-category">
+                <div class="category-header">
+                    <div class="category-icon">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <div class="category-title">
+                        <h3>Consultancy & Training Services</h3>
+                        <p>Expert advice and skill development programs</p>
+                    </div>
+                </div>
+                
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-image">
+                            <img src="services-agricultural-consultancy.jpg" alt="Agricultural Consultancy" loading="lazy">
+                        </div>
+                        <div class="service-content">
+                            <h3>Agricultural Consultancy</h3>
+                            <p>Expert advisory services to optimize your agricultural operations and maximize profitability.</p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check"></i> Farm business planning</li>
+                                <li><i class="fas fa-check"></i> Production optimization</li>
+                                <li><i class="fas fa-check"></i> Market analysis</li>
+                                <li><i class="fas fa-check"></i> Risk management</li>
+                            </ul>
+                            <a href="#" class="btn btn-outline">Learn More</a>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-image">
+                            <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Training and Skills Acquisition" loading="lazy">
+                        </div>
+                        <div class="service-content">
+                            <h3>Training & Skills Acquisition</h3>
+                            <p>Comprehensive training programs to develop agricultural skills and technical expertise.</p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check"></i> Technical skill development</li>
+                                <li><i class="fas fa-check"></i> Practical hands-on training</li>
+                                <li><i class="fas fa-check"></i> Certification programs</li>
+                                <li><i class="fas fa-check"></i> Continuous professional development</li>
+                            </ul>
+                            <a href="#" class="btn btn-outline">Learn More</a>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-image">
+                            <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Seminars and Workshops" loading="lazy">
+                        </div>
+                        <div class="service-content">
+                            <h3>Seminars, Conferences & Workshops</h3>
+                            <p>Organization of professional development events for knowledge sharing and networking.</p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check"></i> Industry conferences</li>
+                                <li><i class="fas fa-check"></i> Technical workshops</li>
+                                <li><i class="fas fa-check"></i> Professional seminars</li>
+                                <li><i class="fas fa-check"></i> Networking events</li>
+                            </ul>
+                            <a href="#" class="btn btn-outline">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Service Category 3: Commercial and Trading Services -->
+            <div class="service-category">
+                <div class="category-header">
+                    <div class="category-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <div class="category-title">
+                        <h3>Commercial & Trading Services</h3>
+                        <p>Supply chain and trading solutions</p>
+                    </div>
+                </div>
+                
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-image">
+                            <img src="services-raw-material.jpg" alt="Raw Material Supply" loading="lazy">
+                        </div>
+                        <div class="service-content">
+                            <h3>Raw Material Supply</h3>
+                            <p>Reliable supply of quality raw materials for agricultural production and processing.</p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check"></i> Seed and planting materials</li>
+                                <li><i class="fas fa-check"></i> Animal feed ingredients</li>
+                                <li><i class="fas fa-check"></i> Fertilizer raw materials</li>
+                                <li><i class="fas fa-check"></i> Supply chain management</li>
+                            </ul>
+                            <a href="#" class="btn btn-outline">Learn More</a>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-image">
+                            <img src="services-chemicals.jpg" alt="Agricultural Chemicals & Equipment" loading="lazy">
+                        </div>
+                        <div class="service-content">
+                            <h3>Agricultural Chemicals & Equipment</h3>
+                            <p>Dealership in agricultural inputs, chemicals, and farming equipment.</p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check"></i> Pesticides and herbicides</li>
+                                <li><i class="fas fa-check"></i> Farm machinery and tools</li>
+                                <li><i class="fas fa-check"></i> Irrigation equipment</li>
+                                <li><i class="fas fa-check"></i> Technical support services</li>
+                            </ul>
+                            <a href="#" class="btn btn-outline">Learn More</a>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-image">
+                            <img src="services-machine-production.jpg" alt="Agricultural Machinery" loading="lazy">
+                        </div>
+                        <div class="service-content">
+                            <h3>Agricultural Machinery</h3>
+                            <p>Sales and manufacturing of agricultural machinery and equipment.</p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check"></i> Tractor sales and service</li>
+                                <li><i class="fas fa-check"></i> Harvesting equipment</li>
+                                <li><i class="fas fa-check"></i> Processing machinery</li>
+                                <li><i class="fas fa-check"></i> Custom equipment design</li>
+                            </ul>
+                            <a href="#" class="btn btn-outline">Learn More</a>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-image">
+                            <img src="services-import.jpg" alt="Import/Export Services" loading="lazy">
+                        </div>
+                        <div class="service-content">
+                            <h3>Import/Export Services</h3>
+                            <p>International trade services for agricultural products and inputs.</p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check"></i> Export of agricultural produce</li>
+                                <li><i class="fas fa-check"></i> Import of farming inputs</li>
+                                <li><i class="fas fa-check"></i> Customs clearance</li>
+                                <li><i class="fas fa-check"></i> International market access</li>
+                            </ul>
+                            <a href="#" class="btn btn-outline">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Service Category 4: Industrial and Manufacturing Services -->
+            <div class="service-category">
+                <div class="category-header">
+                    <div class="category-icon">
+                        <i class="fas fa-industry"></i>
+                    </div>
+                    <div class="category-title">
+                        <h3>Industrial & Manufacturing Services</h3>
+                        <p>Production and manufacturing solutions</p>
+                    </div>
+                </div>
+                
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-image">
+                            <img src="services-machine-production2.jpg" alt="Agricultural Machinery Production" loading="lazy">
+                        </div>
+                        <div class="service-content">
+                            <h3>Agricultural Machinery Production</h3>
+                            <p>Manufacturing of agricultural machinery and equipment for local and international markets.</p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check"></i> Equipment design and engineering</li>
+                                <li><i class="fas fa-check"></i> Manufacturing processes</li>
+                                <li><i class="fas fa-check"></i> Quality control systems</li>
+                                <li><i class="fas fa-check"></i> Custom fabrication</li>
+                            </ul>
+                            <a href="#" class="btn btn-outline">Learn More</a>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-image">
+                            <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Production Skills Acquisition" loading="lazy">
+                        </div>
+                        <div class="service-content">
+                            <h3>Production Skills Acquisition</h3>
+                            <p>Training programs focused on manufacturing and production techniques.</p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check"></i> Technical manufacturing skills</li>
+                                <li><i class="fas fa-check"></i> Quality assurance training</li>
+                                <li><i class="fas fa-check"></i> Production management</li>
+                                <li><i class="fas fa-check"></i> Industrial safety</li>
+                            </ul>
+                            <a href="#" class="btn btn-outline">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Service Category 5: Transport and Logistics -->
+            <div class="service-category">
+                <div class="category-header">
+                    <div class="category-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <div class="category-title">
+                        <h3>Transport & Logistics Services</h3>
+                        <p>Comprehensive transportation and logistics solutions</p>
+                    </div>
+                </div>
+                
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-image">
+                            <img src="service-transport.jpg" alt="Transport Services" loading="lazy">
+                        </div>
+                        <div class="service-content">
+                            <h3>Transport Services</h3>
+                            <p>Reliable transportation solutions for agricultural products and inputs.</p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check"></i> Refrigerated transport</li>
+                                <li><i class="fas fa-check"></i> Bulk commodity haulage</li>
+                                <li><i class="fas fa-check"></i> Timely delivery</li>
+                                <li><i class="fas fa-check"></i> Nationwide coverage</li>
+                            </ul>
+                            <a href="#" class="btn btn-outline">Learn More</a>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-image">
+                            <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80" alt="Logistics and Haulage" loading="lazy">
+                        </div>
+                        <div class="service-content">
+                            <h3>Logistics & Haulage</h3>
+                            <p>Comprehensive logistics management for agricultural supply chains.</p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check"></i> Supply chain optimization</li>
+                                <li><i class="fas fa-check"></i> Inventory management</li>
+                                <li><i class="fas fa-check"></i> Route planning</li>
+                                <li><i class="fas fa-check"></i> Freight management</li>
+                            </ul>
+                            <a href="#" class="btn btn-outline">Learn More</a>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-image">
+                            <img src="services-cargo-light.jpg" alt="Cargo and Light-Truck Services" loading="lazy">
+                        </div>
+                        <div class="service-content">
+                            <h3>Cargo & Light-Truck Services</h3>
+                            <p>Specialized transportation services for various cargo types and sizes.</p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check"></i> Small package delivery</li>
+                                <li><i class="fas fa-check"></i> Light truck services</li>
+                                <li><i class="fas fa-check"></i> Express delivery options</li>
+                                <li><i class="fas fa-check"></i> Last-mile delivery</li>
+                            </ul>
+                            <a href="#" class="btn btn-outline">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Process</h2>
+                <p>We follow a systematic approach to ensure the success of every project</p>
+            </div>
+            
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Consultation</h3>
+                        <p>We begin with a detailed consultation to understand your specific needs and challenges.</p>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Planning</h3>
+                        <p>We develop a customized plan tailored to your business objectives and resources.</p>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Implementation</h3>
+                        <p>Our experts work closely with your team to implement the agreed-upon solutions.</p>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Evaluation</h3>
+                        <p>We monitor results and make adjustments to ensure optimal outcomes for your business.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Client Testimonials</h2>
+                <p>See what our clients have to say about our services</p>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>The poultry production training transformed our operations. We've seen a 30% increase in efficiency since implementing their recommendations.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">AJ</div>
+                        <div class="author-info">
+                            <h4>Abdul Johnson</h4>
+                            <p>Farm Manager, Green Acres Poultry</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>Their consultancy services helped us prevent a potential disease outbreak. The protocols they implemented are now standard across all our facilities.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">SM</div>
+                        <div class="author-info">
+                            <h4>Sarah Mohammed</h4>
+                            <p>Operations Director, Prime Poultry Ltd.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>The mechanized farming training improved our productivity by 15%. The practical approach made it easy for our staff to implement the new techniques.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">TO</div>
+                        <div class="author-info">
+                            <h4>Tunde Okafor</h4>
+                            <p>Farm Manager, Golden Crops Inc.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Transform Your Agricultural Business?</h2>
+            <p>Contact us today to discuss how our services can help you achieve your goals</p>
+            <a href="#" class="btn">Get In Touch</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="waves">
+            <div class="wave wave1"></div>
+            <div class="wave wave2"></div>
+            <div class="wave wave3"></div>
+        </div>
+        
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-grid">
+                   <div class="footer-column">
+                        <h3>Kaizen Poultry Skills Academy</h3>
+                        <p>Providing innovative poultry training, consulting, and business solutions to help organizations thrive in the agricultural industry.</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h3>Quick Links</h3>
+                        <ul class="footer-links">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="training.html">Training Programs</a></li>
+                            <li><a href="courseinformation.html">Corse information </a></li>
+                            <li><a href="services.html">Services</a></li>
+                            <li><a href="frequentlyasked.html">FAQ</a></li>
+                            <li><a href="partners.html">Partners</a></li>
+
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h3>Services</h3>
+                        <ul class="footer-links">
+                            <li><a href="#agricultural">Agricultural Services</a></li>
+                            <li><a href="services.html#consultancy">Consultancy & Training Services</a></li>
+                            <li><a href="services.html#commercial">Commercial & Trading Services</a></li>
+                            <li><a href="services.html#industrial">Industrial & Mnufacturing Services</a></li>
+                            <li><a href="services.html#transport">Transport & Logistics Services</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h3>Contact Info</h3>
+                        <ul class="footer-links">
+                            <li><i class="fas fa-map-marker-alt"></i> Block 5, Flat 3,Dutsinma Close.Area 1,Section 2,Garki,Abuja.</li>
+                             <li><i class="fas fa-phone"></i> 08055057189, 090369646693.</li>
+                            <li><i class="fas fa-envelope"></i> Kaizenacademy@gmail.com</li>
+                            <li><i class="fas fa-clock"></i> Mon-Fri: 9AM - 6PM</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Kaizen Poultry Skills Academy Limited. All Rights Reserved.</p>
+            </div>
+        </div>   
+        </footer>
+
+    <script>
+        // Toggle menu functionality
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Close menu when clicking on a link
+        document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+        }));
+
+        // Ensure hero image loads properly
+        document.addEventListener('DOMContentLoaded', function() {
+            const heroImage = document.getElementById('hero-image');
+            
+            // Force reload of hero image if needed
+            if (heroImage) {
+                heroImage.onload = function() {
+                    console.log('Hero image loaded successfully');
+                };
+                
+                heroImage.onerror = function() {
+                    console.log('Hero image failed to load, using fallback');
+                    // You could set a fallback image here if needed
+                };
+            }
+            
+            // Lazy loading implementation for other images
+            const lazyImages = [].slice.call(document.querySelectorAll('img[loading="lazy"]'));
+            
+            if ('IntersectionObserver' in window) {
+                let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            let lazyImage = entry.target;
+                            lazyImage.src = lazyImage.dataset.src;
+                            lazyImage.classList.remove('loading');
+                            lazyImage.classList.add('loaded');
+                            lazyImageObserver.unobserve(lazyImage);
+                        }
+                    });
+                });
+
+                lazyImages.forEach(function(lazyImage) {
+                    // Store the original src in data-src
+                    lazyImage.dataset.src = lazyImage.src;
+                    // Set a placeholder or empty src
+                    lazyImage.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZjVmNWY1Ii8+PC9zdmc+';
+                    lazyImage.classList.add('loading');
+                    lazyImageObserver.observe(lazyImage);
+                });
+            } else {
+                // Fallback for browsers that don't support IntersectionObserver
+                lazyImages.forEach(function(lazyImage) {
+                    lazyImage.classList.add('loaded');
+                });
+            }
+        });
+
+        // Simple animation for service cards when they come into view
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe service cards
+        document.querySelectorAll('.service-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(card);
+        });
+
+        // Observe process steps
+        document.querySelectorAll('.process-step').forEach(step => {
+            step.style.opacity = '0';
+            step.style.transform = 'translateY(20px)';
+            step.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(step);
+        });
+
+        // Observe testimonial cards
+        document.querySelectorAll('.testimonial-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(card);
+        });
+
+        // Handle landscape mode for mobile
+        function handleLandscapeMode() {
+            const hamburger = document.querySelector('.hamburger');
+            const navMenu = document.querySelector('.nav-menu');
+            
+            if (window.innerHeight <= 500 && window.matchMedia("(orientation: landscape)").matches) {
+                // Landscape mode on mobile
+                hamburger.style.display = 'none';
+                navMenu.style.position = 'static';
+                navMenu.style.flexDirection = 'row';
+                navMenu.style.backgroundColor = 'transparent';
+                navMenu.style.boxShadow = 'none';
+                navMenu.style.padding = '0';
+                navMenu.style.width = 'auto';
+                navMenu.style.height = 'auto';
+                navMenu.style.display = 'flex';
+                
+                // Adjust nav items
+                document.querySelectorAll('.nav-item').forEach(item => {
+                    item.style.margin = '0 10px';
+                });
+                
+                // Adjust nav links
+                document.querySelectorAll('.nav-link').forEach(link => {
+                    link.style.padding = '8px 12px';
+                    link.style.fontSize = '0.9rem';
+                });
+            } else {
+                // Portrait mode or desktop
+                if (window.innerWidth <= 992) {
+                    hamburger.style.display = 'block';
+                } else {
+                    hamburger.style.display = 'none';
+                }
+            }
+        }
+
+        // Check on load and resize
+        window.addEventListener('load', handleLandscapeMode);
+        window.addEventListener('resize', handleLandscapeMode);
+        window.addEventListener('orientationchange', handleLandscapeMode);
+    </script>
+</body>
+</html>
